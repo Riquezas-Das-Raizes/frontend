@@ -1,0 +1,33 @@
+.card-container{
+    border-radius: 0.5rem;
+    width: 15rem;
+    box-shadow: 0px 1px 8px #999;
+    display: flex;
+    flex-direction:  column;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.card-img{
+    width: 100%;
+    border-radius: 100%;
+
+}
+
+.card-titulo{
+    font-size: 2rem;
+    color: #ADC178;
+    text-align: center;
+
+
+}
+
+.card-texto{
+    text-align: center;
+
+}
+
+.card-link{
+    text-align: center;
+
+}

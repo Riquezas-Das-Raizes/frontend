@@ -1,5 +1,6 @@
 import Navbar from "./components/navbar/Navbar"
 import Sobrenos from "./pages/sobrenos/Sobrenos"
+import Contatos from "./pages/contatos/Contatos"
 import Footer from "./components/footer/Footer"
 
 function App() {
@@ -7,7 +8,8 @@ function App() {
   return (
     <>
       <Navbar/>
-      <Sobrenos/> 
+      <Sobrenos/>
+      <Contatos />
       <Footer/>
     </>
   )

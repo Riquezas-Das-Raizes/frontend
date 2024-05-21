@@ -1,0 +1,12 @@
+.contatos-titulo{
+    font-size: 4rem;
+    color: #ADC178;
+    text-align: center;
+    padding: 1rem;
+}
+
+.contatos-container{
+    display: flex;
+    padding: 2rem;
+    
+}
