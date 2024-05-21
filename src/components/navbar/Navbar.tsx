@@ -6,18 +6,18 @@ function Navbar() {
           <img
             src="src\assets\img\logo.png"
             alt="Logo"
-            className="w-16 h-auto  mr-2"
+            className="w-16 h-auto mr-2"
           />
           <span className="text-custom-text font-semibold">
             Riqueza das Raízes
           </span>
         </div>
-        <div className="flex space-x-6">
-          <div className="text-custom-text hover:underline">Home</div>
-          <div className="text-custom-text hover:underline">Produtos</div>
-          <div className="text-custom-text hover:underline">Sobre Nós</div>
-          <div className="text-custom-text hover:underline">Contatos</div>
-          <div className="text-custom-text hover:underline">Faça login</div>
+        <div className="flex space-x-6 text-custom-text">
+          <div className="hover:underline">Home</div>
+          <div className="hover:underline">Produtos</div>
+          <div className="hover:underline">Sobre Nós</div>
+          <div className="hover:underline">Contatos</div>
+          <div className="hover:underline">Faça login</div>
         </div>
       </nav>
     </>
