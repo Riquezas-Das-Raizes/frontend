@@ -11,23 +11,18 @@
 .card-img{
     width: 100%;
     border-radius: 100%;
-
 }
 
 .card-titulo{
     font-size: 2rem;
     color: #ADC178;
     text-align: center;
-
-
 }
 
 .card-texto{
     text-align: center;
-
 }
 
 .card-link{
     text-align: center;
-
 }

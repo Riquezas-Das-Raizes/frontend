@@ -1,7 +1,4 @@
 function Footer() {
- 
-  
-
     return (
       <>
           <div className="flex justify-content">

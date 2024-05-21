@@ -3,7 +3,6 @@ import "./Sobrenos.css"
 function Sobrenos() {
 
     return (
-
         <div className="background">
             <div className="flex justify-center item-center p-4">
                 <h1>Sobre nós</h1>
@@ -25,11 +24,8 @@ function Sobrenos() {
                     e adquiridas. Cada item disponível em nossa loja é um testemunho do talento, da criatividade e da conexão
                     profunda desses artesãos com a natureza.</p>
             </div>
-
-
         </div>
     )
-
 }
 
 export default Sobrenos 

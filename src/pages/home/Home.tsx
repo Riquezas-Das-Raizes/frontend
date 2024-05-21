@@ -54,7 +54,7 @@ function Home() {
                         justify-center
                     ">
                         <img
-                            src="src\assets\img\RIQUEZA DAS RAÍZES (1).png"
+                            src="src\assets\img\logo.png"
                             alt="Imagem da Página Home"
                             className="size-max"
                         />
