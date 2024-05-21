@@ -1,10 +1,11 @@
-function App() {
+import Sobrenos from "./pages/sobrenos/Sobrenos"
 
-  return (
-    <>
-      <h1>Hello</h1>
-    </>
-  )
+function App() {
+    return(
+        <>
+        <Sobrenos/> 
+        </>
+    )
 }
 
-export default App
+export default App 
