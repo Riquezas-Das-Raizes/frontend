@@ -1,8 +1,10 @@
+import Contatos from "./pages/contatos/Contatos"
+
 function App() {
 
   return (
     <>
-      <h1>Hello</h1>
+  <Contatos />
     </>
   )
 }
