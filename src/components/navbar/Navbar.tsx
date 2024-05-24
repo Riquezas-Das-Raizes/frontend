@@ -28,7 +28,7 @@ function Navbar() {
           </span>
         </Link>
         <div className="flex space-x-6 text-custom-text">
-          <div className="hover:underline">Home</div>
+        <Link to="/" className="hover:underline">Home</Link>
           <div className="hover:underline">Produtos</div>
           <Link to="/sobrenos" className="hover:underline">Sobre Nós</Link>
           <Link to="/contatos" className="hover:underline">Contatos</Link>

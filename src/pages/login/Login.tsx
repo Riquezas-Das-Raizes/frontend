@@ -90,7 +90,7 @@ function Login() {
 
                     <p>
                         Ainda não tem uma conta?{' '}
-                        <Link to='/cadastro' className="text-custom-text hover:underline">
+                        <Link to='/cadastrar' className="text-custom-text hover:underline">
                             Cadastre-se
                         </Link>
                     </p>
