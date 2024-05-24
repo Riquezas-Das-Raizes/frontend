@@ -5,5 +5,4 @@ export interface CardInterface{
     texto: string;
     link?: string;
     path?: string;
-
 }
