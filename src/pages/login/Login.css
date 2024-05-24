@@ -1,0 +1,8 @@
+.fundoLogin {
+    background-image: url(https://ik.imagekit.io/hkuorpqko/Blog%20Pessoal/login.jpg?updatedAt=1716321417699);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
