@@ -10,8 +10,6 @@ function Card ({foto,alt, titulo, texto, link, path }: CardInterface){
             <h3 className="card-titulo"> {titulo} </h3>
             <p className="card-texto"> {texto}</p>
             <a className="card-link" href={path}> {link}</a>
-            
-
         </div>
         </>
     );
