@@ -1,6 +1,19 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
 
 function Navbar() {
+
+  const navigate = useNavigate();
+
+  const { usuario, handleLogout } = useContext(AuthContext);
+
+  function logout(){
+    handleLogout()
+    alert('O usuário foi desconectado com sucesso!')
+    navigate('/')
+  }
+
   return (
     <>
       <nav className="bg-custom-bg py-4 px-6 flex justify-between items-center">
@@ -19,7 +32,11 @@ function Navbar() {
           <div className="hover:underline">Produtos</div>
           <Link to="/sobrenos" className="hover:underline">Sobre Nós</Link>
           <Link to="/contatos" className="hover:underline">Contatos</Link>
-          <div className="hover:underline">Faça login</div>
+          {usuario.token ? (
+            <Link to="" onClick={logout} className="hover:underline">Sair</Link>
+          ) : (
+            <Link to="/login" className="hover:underline">Faça login</Link>
+          )}
         </div>
       </nav>
     </>

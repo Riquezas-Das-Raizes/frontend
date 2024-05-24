@@ -1,20 +1,41 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, useContext, useEffect, useState } from "react";
 import { RotatingLines } from "react-loader-spinner";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './Login.css';
+import UsuarioLogin from "../../models/UsuarioLogin";
+import { AuthContext } from "../../contexts/AuthContext";
 
 function Login() {
+
+    const navigate = useNavigate();
+
+    const { usuario, handleLogin, isLoading } = useContext(AuthContext);
+
+    const [usuarioLogin, setUsuarioLogin] = useState<UsuarioLogin>(
+        {} as UsuarioLogin
+    )
+
+    useEffect(() => {
+        if(usuario.token !== ''){
+            navigate("/")
+        }
+    }, [usuario])
+
+    function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
+        setUsuarioLogin({
+            ...usuarioLogin,
+            [e.target.name]: e.target.value,
+        })
+    }
+
+    function login(e: ChangeEvent<HTMLFormElement>){
+        e.preventDefault();
+        handleLogin(usuarioLogin);
+    }
 
     return (
         <>
             <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold ">
-
-                {/* 
-                    Adicionamos o Evento onSubmit no formulário, passando como argumento 
-                    a função login, ou seja, quando o usuário enviar o formulário 
-                    // (clicar no botão entrar), a função definida dentro dos parênteses será
-                    executada. 
-                */}
                 <form className="flex justify-center items-center flex-col w-1/2 gap-4" 
                     onSubmit={login}
                 >
@@ -27,20 +48,7 @@ function Login() {
                             name="usuario"
                             placeholder="Usuario"
                             className="border-2 border-slate-700 rounded p-2"
-                            /**
-                             * Através da propriedade value, definimos que o valor dentro desse 
-                             * input será o mesmo valor que estiver armazenado no respectivo 
-                             * atributo do Estado usuarioLogin. 
-                             */
                             value={usuarioLogin.usuario}
-                            /**
-                             * Através do evento onChange definiremos a função que será executada, 
-                             * todas as vezes que o valor do input for modificado, ou seja, quando 
-                             * o usuário digitar alguma coisa no input. 
-                             * 
-                             * A função (e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e), 
-                             * receberá os dados do input que foi modificado, através do parâmetro e (Evento).
-                             */
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
@@ -52,39 +60,14 @@ function Login() {
                             name="senha"
                             placeholder="Senha"
                             className="border-2 border-slate-700 rounded p-2"
-                            /**
-                             * Através da propriedade value, definimos que o valor dentro desse 
-                             * input será o mesmo valor que estiver armazenado no respectivo 
-                             * atributo do Estado usuarioLogin. 
-                             */
-                            // value={usuarioLogin.senha}
-                            /**
-                             * Através do evento onChange definiremos a função que será executada, 
-                             * todas as vezes que o valor do input for modificado, ou seja, quando 
-                             * o usuário digitar alguma coisa no input. 
-                             * 
-                             * A função (e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e), 
-                             * receberá os dados do input que foi modificado, através do parâmetro e (Evento).
-                             */
+                            value={usuarioLogin.senha}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
                     </div>
                     <button
                         type='submit'
-                        className="rounded bg-indigo-400 flex justify-center
-                                   hover:bg-indigo-900 text-white w-1/2 py-2">
-
-                        {/* 
-                            Através de uma Expressão Ternária, verificaremos qual é o valor atual do Estado 
-                            isLoading, para definir se o Componente loader RotatingLines será exibido ou não, 
-                            indicando se existe um processo que está em andamento, ou seja, se o processo de 
-                            autenticação (login) do usuário foi ou não concluído. 
-
-                            - Se o Estado isLoading estiver com o valor false, será exibido no botão o texto Entrar. 
-                            - Se o Estado isLoading estiver com o valor true, será exibido no botão o Componente 
-                              loader RotatingLines. 
-
-                        */}
+                        className="rounded bg-custom-bg-secondary flex justify-center
+                                   hover:bg-custom-bg-optional text-white w-1/2 py-2">
                         {isLoading ?
 
                             <RotatingLines
@@ -107,10 +90,7 @@ function Login() {
 
                     <p>
                         Ainda não tem uma conta?{' '}
-                        {/* 
-                            Criamos um link para a Rota /cadastro - Componente Cadastro
-                        */}
-                        <Link to='/cadastro' className="text-indigo-800 hover:underline">
+                        <Link to='/cadastro' className="text-custom-text hover:underline">
                             Cadastre-se
                         </Link>
                     </p>
