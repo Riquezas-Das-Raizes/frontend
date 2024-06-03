@@ -8,6 +8,7 @@ import Contatos from "./pages/contatos/Contatos";
 import Login from "./pages/login/Login";
 import Cadastro from "./pages/cadastro/Cadastro";
 import FormCategoria from "./components/categoria/formcategoria/FormCategoria";
+import ListarCategorias from "./components/categoria/listarcategorias/ListarCategorias";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               <Route path="/sobrenos" element={<Sobrenos />}/>
               <Route path="/login" element={<Login />}/>
               <Route path="/cadastrar" element={<Cadastro />} />
+              <Route path="/categorias" element={<ListarCategorias />} />
               <Route path="/cadastrarcategoria" element={<FormCategoria />} />
             </Routes>
           <Footer/>
