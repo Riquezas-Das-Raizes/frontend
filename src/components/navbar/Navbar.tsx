@@ -3,15 +3,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 
 function Navbar() {
-
   const navigate = useNavigate();
 
   const { usuario, handleLogout } = useContext(AuthContext);
 
-  function logout(){
-    handleLogout()
-    alert('O usuário foi desconectado com sucesso!')
-    navigate('/')
+  function logout() {
+    handleLogout();
+    alert("O usuário foi desconectado com sucesso!");
+    navigate("/");
   }
 
   return (
@@ -28,14 +27,27 @@ function Navbar() {
           </span>
         </Link>
         <div className="flex space-x-6 text-custom-text">
-        <Link to="/" className="hover:underline">Home</Link>
+          <Link to="/" className="hover:underline">
+            Home
+          </Link>
           <div className="hover:underline">Produtos</div>
-          <Link to="/sobrenos" className="hover:underline">Sobre Nós</Link>
-          <Link to="/contatos" className="hover:underline">Contatos</Link>
+          <Link to="/sobrenos" className="hover:underline">
+            Sobre Nós
+          </Link>
+          <Link to="/contatos" className="hover:underline">
+            Contatos
+          </Link>
+          <Link to="/categorias" className="hover:underline">
+            Categorias
+          </Link>
           {usuario.token ? (
-            <Link to="" onClick={logout} className="hover:underline">Sair</Link>
+            <Link to="" onClick={logout} className="hover:underline">
+              Sair
+            </Link>
           ) : (
-            <Link to="/login" className="hover:underline">Faça login</Link>
+            <Link to="/login" className="hover:underline">
+              Faça login
+            </Link>
           )}
         </div>
       </nav>
