@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import Categoria from "../../../models/Categoria";
 import { buscar } from "../../../services/Service";
 import { AuthContext } from "../../../contexts/AuthContext";
-import CardCategoria from "../cardTema/CardCategoria";
+import CardCategoria from "../cardcategoria/CardCategoria";
 // import { useNavigate } from "react-router-dom"; // Uncomment if navigation is needed
 
 function ListaCategoria() {
