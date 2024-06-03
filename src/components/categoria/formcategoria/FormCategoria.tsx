@@ -62,7 +62,7 @@ function FormCategoria() {
 
         try {
             if (id !== undefined) {
-                await atualizar(`/categorias/${id}`, categoria, setCategoria, {
+                await atualizar(`/categorias`, categoria, setCategoria, {
                     headers: {
                         'Authorization': token
                     }
