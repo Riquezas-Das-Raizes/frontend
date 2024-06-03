@@ -30,6 +30,7 @@ function Navbar() {
         <div className="flex space-x-6 text-custom-text">
         <Link to="/" className="hover:underline">Home</Link>
           <div className="hover:underline">Produtos</div>
+          <Link to="/cadastrarCategoria" className="hover:underline">Cadastrar Categoria</Link>
           <Link to="/sobrenos" className="hover:underline">Sobre Nós</Link>
           <Link to="/contatos" className="hover:underline">Contatos</Link>
           {usuario.token ? (

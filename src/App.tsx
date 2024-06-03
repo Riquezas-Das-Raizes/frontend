@@ -7,6 +7,7 @@ import Sobrenos from "./pages/sobrenos/Sobrenos";
 import Contatos from "./pages/contatos/Contatos";
 import Login from "./pages/login/Login";
 import Cadastro from "./pages/cadastro/Cadastro";
+import FormCategoria from "./components/categoria/formcategoria/FormCategoria";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Route path="/sobrenos" element={<Sobrenos />}/>
               <Route path="/login" element={<Login />}/>
               <Route path="/cadastrar" element={<Cadastro />} />
+              <Route path="/cadastrarcategoria" element={<FormCategoria />} />
             </Routes>
           <Footer/>
         </BrowserRouter>
