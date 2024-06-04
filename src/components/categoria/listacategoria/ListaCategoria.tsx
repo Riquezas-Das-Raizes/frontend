@@ -39,9 +39,11 @@ function ListaCategoria() {
 
   return (
     <>
-      {categorias.map((categoria) => (
-        <CardCategoria key={categoria.id} categoria={categoria} />
-      ))}
+      <div className="flex m-2 justify-center align-center">
+        {categorias.map((categoria) => (
+          <CardCategoria key={categoria.id} categoria={categoria} />
+        ))}
+      </div>
     </>
   );
 }
