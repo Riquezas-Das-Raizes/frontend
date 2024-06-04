@@ -24,7 +24,7 @@ function CardProducts({ product }: CardProductProps) {
                 <div className='p-4 '>
                     <h4 className='text-lg font-semibold uppercase'>{product.name}</h4>
                     <p>{product.price}</p>
-                    <p>Tema: {product.categoria?.name}</p>
+                    <p>Categoria: {product.categoria?.name}</p>
                 </div>
             </div>
             <div className="flex">

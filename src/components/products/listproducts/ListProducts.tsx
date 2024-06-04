@@ -12,7 +12,7 @@ function ListProducts() {
 
     const navigate = useNavigate();
 
-    const [postagens, setProducts] = useState<Product[]>([]);
+    const [products, setProducts] = useState<Product[]>([]);
 
     const { usuario, handleLogout } = useContext(AuthContext);
     const token = usuario.token;
@@ -41,11 +41,11 @@ function ListProducts() {
 
     useEffect(() => {
         buscarProducts()
-    }, [postagens.length])
+    }, [products.length])
 
     return (
         <>
-            {postagens.length === 0 && (
+            {products.length === 0 && (
                 <DNA
                     visible={true}
                     height="200"
@@ -58,7 +58,7 @@ function ListProducts() {
             <div className='container mx-auto my-4 
                 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'
             >
-                {postagens.map((product) => (
+                {products.map((product) => (
                     <CardProducts key={product.id} product={product} />
                 ))}
 
