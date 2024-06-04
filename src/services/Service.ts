@@ -13,6 +13,16 @@ export const buscar = async (
   setDados(resposta.data);
 };
 
+export const buscarCat = async (url: string, setDados: Function, header: Object) => {
+  try {
+    const resposta = await api.get(url, header);
+    setDados(resposta.data);
+  } catch (error) {
+    console.error("Erro ao buscar categorias:", error);
+    throw error;
+  }
+};
+
 export const cadastrar = async (
   url: string,
   dados: Object,
