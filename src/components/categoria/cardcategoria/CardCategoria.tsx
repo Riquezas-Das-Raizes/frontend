@@ -1,7 +1,8 @@
-import { Link, useNavigate } from "react-router-dom";
-import Categoria from "../../../models/Categoria";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
+import Categoria from "../../../models/Categoria";
+
 
 interface CardCategoriaProps {
   categoria: Categoria;
@@ -16,7 +17,7 @@ function CardCategoria({ categoria }: CardCategoriaProps) {
       <header className="py-2 px-6 bg-[#ADC178] text-white font-bold text-2xl">
         Categoria
       </header>
-      <p className="p-8 text-3xl bg-slate-200 h-full">{categoria.nome}</p>
+      <p className="p-8 text-3xl bg-slate-200 h-full">{categoria.name}</p>
 
         <div className="flex">
           <Link

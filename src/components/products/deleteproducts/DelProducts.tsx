@@ -1,26 +1,26 @@
 import { useState, useContext, useEffect } from "react"
+import { RotatingLines } from "react-loader-spinner"
 import { useNavigate, useParams } from "react-router-dom"
 import { AuthContext } from "../../../contexts/AuthContext"
+import Product from "../../../models/Produto"
 import { buscar, deletar } from "../../../services/Service"
-import { RotatingLines } from "react-loader-spinner"
-import Categoria from "../../../models/Categoria"
 
 
-function DeletarCategoria() {
+function DeleteProduct() {
 
     const navigate = useNavigate()
 
-    const [categoria, setCategoria] = useState<Categoria>({} as Categoria)
     const [isLoading, setIsLoading] = useState<boolean>(false)
-    
-    const { usuario, handleLogout } = useContext(AuthContext)
-    const token = usuario.token
+    const [product, setProduct] = useState<Product>({} as Product)
 
     const { id } = useParams<{ id: string }>()
 
+    const { usuario, handleLogout } = useContext(AuthContext)
+    const token = usuario.token
+
     async function buscarPorId(id: string) {
         try {
-            await buscar(`/categorias/${id}`, setCategoria, {
+            await buscar(`/produtos/${id}`, setProduct, {
                 headers: {
                     'Authorization': token
                 }
@@ -34,7 +34,7 @@ function DeletarCategoria() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+            // ToastAlerta('Você precisa estar logado', "info")
             navigate('/')
         }
     }, [token])
@@ -45,23 +45,23 @@ function DeletarCategoria() {
         }
     }, [id])
 
-    async function deletarCategoria() {
+    async function deletarProduct() {
         setIsLoading(true)
 
         try {
-            await deletar(`/categorias/${id}`, {
+            await deletar(`/produtos/${id}`, {
                 headers: {
                     'Authorization': token
                 }
             })
 
-            alert('Categoria apagada com sucesso')
+            // ToastAlerta('Product apagada com sucesso', "sucesso")
 
         } catch (error: any) {
             if (error.toString().includes('403')) {
                 handleLogout()
             }else {
-                alert('Erro ao deletar a categoria.')
+                // ToastAlerta('Erro ao deletar a product.', "erro")
             }
         }
 
@@ -70,20 +70,26 @@ function DeletarCategoria() {
     }
 
     function retornar() {
-        navigate("/categorias")
+        navigate("/produtos")
     }
     
     return (
         <div className='container w-1/3 mx-auto'>
-            <h1 className='text-4xl text-center my-4'>Deletar categoria</h1>
+            <h1 className='text-4xl text-center my-4'>Deletar Produto</h1>
+
             <p className='text-center font-semibold mb-4'>
-                Você tem certeza de que deseja apagar a categoria a seguir?</p>
+                Você tem certeza de que deseja apagar o produto a seguir?
+            </p>
+
             <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
                 <header 
                     className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>
-                    Categoria
+                    Produto
                 </header>
-                <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.name}</p>
+                <div className="p-4">
+                    <p className='text-xl h-full'>{product.name}</p>
+                    <p>{product.price}</p>
+                </div>
                 <div className="flex">
                     <button 
                         className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2'
@@ -92,8 +98,9 @@ function DeletarCategoria() {
                     </button>
                     <button 
                         className='w-full text-slate-100 bg-indigo-400 
-                                   hover:bg-indigo-600 flex items-center justify-center'
-                                   onClick={deletarCategoria}>
+                        hover:bg-indigo-600 flex items-center justify-center'
+                        onClick={deletarProduct}>
+                        
                         {isLoading ?
                             <RotatingLines
                                 strokeColor="white"
@@ -110,4 +117,5 @@ function DeletarCategoria() {
         </div>
     )
 }
-export default DeletarCategoria
+
+export default DeleteProduct
