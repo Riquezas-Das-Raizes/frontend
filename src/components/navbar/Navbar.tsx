@@ -40,6 +40,9 @@ function Navbar() {
           <Link to="/categorias" className="hover:underline">
             Categorias
           </Link>
+          <Link to="/produtos" className="hover:underline">
+            Produtos
+          </Link>
           <Link to="/cadastrarCategoria" className="hover:underline">Cadastrar Categoria</Link>
           {usuario.token ? (
             <Link to="" onClick={logout} className="hover:underline">
