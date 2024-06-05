@@ -4,6 +4,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import { RotatingLines } from "react-loader-spinner";
 import Categoria from "../../../models/Categoria";
 import { atualizar, buscar, cadastrarCategoria } from "../../../services/Service";
+import { hotAlerta } from "../../../util/hotAlerta";
 
 function FormCategoria() {
 
@@ -26,7 +27,7 @@ function FormCategoria() {
             });
         } catch (error: any) {
             if (error.toString().includes('401')) {
-                alert('Token expirado!');
+                hotAlerta('Token expirado!', 'info');
                 handleLogout();
             }
         }
@@ -34,7 +35,7 @@ function FormCategoria() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado!');
+            hotAlerta('Você precisa estar logado!', 'sucesso');
             navigate('/login');
         }
     }, [token]);
@@ -67,21 +68,21 @@ function FormCategoria() {
                         'Authorization': token
                     }
                 });
-                alert('Categoria atualizada com sucesso!');
+                hotAlerta('Categoria atualizada com sucesso!', 'sucesso');
             } else {
                 await cadastrarCategoria(`/categorias`, categoria, setCategoria, {
                     headers: {
                         'Authorization': token
                     }
                 });
-                alert('Categoria cadastrada com sucesso!');
+                hotAlerta('Categoria cadastrada com sucesso!', 'sucesso');
             }
         } catch (error: any) {
             if (error.toString().includes('401')) {
-                alert('O token expirou!');
+                hotAlerta('O token expirou!', 'info');
                 handleLogout();
             } else {
-                alert('Erro ao processar a solicitação!');
+                hotAlerta('Erro ao processar a solicitação!', 'erro');
             }
         }
 
@@ -103,11 +104,11 @@ function FormCategoria() {
                         placeholder="Nome"
                         name='nome'
                         className="border-2 border-slate-700 rounded p-2"
-                        value={categoria.name || ''}
+                        value={categoria.nome || ''}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => stateActually(e)}
                     />
                 </div>
-                <button className="rounded text-slate-100 bg-indigo-400 hover:bg-indigo-800 w-1/2 py-2 mx-auto flex justify-center" type="submit">
+                <button className="rounded text-slate-100 bg-custom-green hover:bg-custom-emerald w-1/2 py-2 mx-auto flex justify-center" type="submit">
                     {
                         isLoading ? (
                             <RotatingLines strokeColor='white' strokeWidth='5' animationDuration='0.75' width='24' visible={true} />

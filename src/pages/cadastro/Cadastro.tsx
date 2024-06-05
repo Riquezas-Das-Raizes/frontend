@@ -4,6 +4,7 @@ import Usuario from "../../models/Usuario";
 import { cadastrar } from "../../services/Service";
 import "./Cadastro.css";
 import { RotatingLines } from "react-loader-spinner";
+import { hotAlerta } from "../../util/hotAlerta";
 
 function Cadastro() {
   const navigate = useNavigate();
@@ -18,6 +19,7 @@ function Cadastro() {
     usuario: "",
     senha: "",
     foto: "",
+    admin: false,
   });
 
   useEffect(() => {
@@ -51,12 +53,12 @@ function Cadastro() {
 
       try {
         await cadastrar(`/usuarios/cadastrar`, usuario, setUsuario);
-        alert("Usuário cadastrado com sucesso!");
+        hotAlerta("Usuário cadastrado com sucesso!", 'sucesso');
       } catch (error) {
-        alert("Erro ao cadastrar o usuário!");
+        hotAlerta("Erro ao cadastrar o usuário!", 'erro');
       }
     } else {
-      alert("Dados estão inconsistentes. Verifique as informações do cadastro");
+      hotAlerta("Dados estão inconsistentes. Verifique as informações do cadastro!", 'info');
       setUsuario({ ...usuario, senha: "" });
       setConfirmaSenha("");
     }
@@ -68,7 +70,7 @@ function Cadastro() {
     <>
       <div
         className="grid grid-cols-1 lg:grid-cols-2 h-screen 
-            place-items-center font-bold bg-custom-beige"
+            place-items-center font-bold bg-custom-beige rounded-lg "
       >
         <div className="fundoCadastro hidden lg:block"></div>
         <form
