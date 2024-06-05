@@ -3,15 +3,13 @@ import Categoria from "../../../models/Categoria";
 import { buscar } from "../../../services/Service";
 import { AuthContext } from "../../../contexts/AuthContext";
 import CardCategoria from "../cardcategoria/CardCategoria";
-// import { useNavigate } from "react-router-dom"; // Uncomment if navigation is needed
+import { useNavigate } from "react-router-dom"; // Uncomment if navigation is needed
 
 function ListaCategoria() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
-  // let navigate = useNavigate();
-
-  console.log(categorias);
+  let navigate = useNavigate();
 
   async function listar() {
     try {
@@ -26,14 +24,14 @@ function ListaCategoria() {
     }
   }
 
-  // useEffect(() => {
-  //   if (token === "") {
-  //     alert("Você precisa estar logado");
-  //     // navigate("/login"); // Uncomment if navigation is needed
-  //   } else {
-  //     listar();
-  //   }
-  // }, [token]);
+  useEffect(() => {
+    if (token === "") {
+      alert("Você precisa estar logado");
+      navigate("/login");
+    } else {
+      listar();
+    }
+  }, [token]);
 
   useEffect(() => {
     listar();
@@ -41,9 +39,11 @@ function ListaCategoria() {
 
   return (
     <>
-      {categorias.map((categoria) => (
-        <CardCategoria key={categoria.id} categoria={categoria} />
-      ))}
+      <div className="flex m-2 justify-center align-center">
+        {categorias.map((categoria) => (
+          <CardCategoria key={categoria.id} categoria={categoria} />
+        ))}
+      </div>
     </>
   );
 }

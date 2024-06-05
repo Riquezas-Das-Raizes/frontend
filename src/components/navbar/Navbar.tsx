@@ -56,6 +56,9 @@ function Navbar() {
             <Link to="#" className="hover:underline">
               Artesões
             </Link>
+            <Link to="/perfil" className="hover:underline">
+              Perfil
+            </Link>
           </div>
           <div className="flex gap-4">
             <Link to="#" className="hover:underline">

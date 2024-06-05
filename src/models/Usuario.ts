@@ -6,5 +6,6 @@ export default interface Usuario {
   usuario: string;
   senha: string;
   foto: string;
+  admin: boolean;
   produto?: Produto | null;
 }

@@ -1,6 +1,11 @@
-import "./Sobrenos.css"
+import "./Sobrenos.css";
 
 function Sobrenos() {
+  return (
+    <div className="background">
+      <div className="flex justify-center item-center p-4">
+        <h1>Sobre nós</h1>
+      </div>
 
     return (
         <div className="bg-custom-beige">
@@ -31,4 +36,4 @@ function Sobrenos() {
     )
 }
 
-export default Sobrenos 
+export default Sobrenos;

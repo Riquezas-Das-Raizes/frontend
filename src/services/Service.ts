@@ -46,7 +46,7 @@ export const cadastrarCategoria = async (
   url: string,
   dados: Object,
   setDados: Function,
-  header: Object
+  header: Object,
 ) => {
   const resposta = await api.post(url, dados, header);
   setDados(resposta.data);
@@ -55,7 +55,7 @@ export const cadastrarCategoria = async (
 export const login = async (url: string, dados: Object, setDados: Function) => {
   const resposta = await api.post(url, dados);
   setDados(resposta.data);
-}
+};
 
 export const atualizar = async (
   url: string,
@@ -70,5 +70,3 @@ export const atualizar = async (
 export const deletar = async (url: string, header: Object) => {
   await api.delete(url, header);
 };
-
-
