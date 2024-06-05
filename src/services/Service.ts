@@ -13,14 +13,19 @@ export const buscar = async (
   setDados(resposta.data);
 };
 
-export const cadastrar = async(
+export const cadastrarProd = async(
   url: string, 
   dados: Object, 
   setDados: Function, 
   header: Object
   ) => {
-  const resposta = await api.post(url, dados, header)
-  setDados(resposta.data)
+  try {
+    const resposta = await api.post(url, dados, header);
+    setDados(resposta.data);
+  } catch (error) {
+    console.error("Erro ao cadastrar produto:", error);
+    throw error;
+  }
 }
 
 export const buscarCat = async (url: string, setDados: Function, header: Object) => {
@@ -33,14 +38,14 @@ export const buscarCat = async (url: string, setDados: Function, header: Object)
   }
 };
 
-// export const cadastrar = async (
-//   url: string,
-//   dados: Object,
-//   setDados: Function,
-// ) => {
-//   const resposta = await api.post(url, dados);
-//   setDados(resposta.data);
-// };
+export const cadastrar = async (
+  url: string,
+  dados: Object,
+  setDados: Function,
+) => {
+  const resposta = await api.post(url, dados);
+  setDados(resposta.data);
+};
 
 export const cadastrarCategoria = async (
   url: string,

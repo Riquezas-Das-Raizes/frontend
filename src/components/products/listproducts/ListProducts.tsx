@@ -1,16 +1,12 @@
 import { useState, useContext, useEffect } from "react";
 import { DNA } from "react-loader-spinner";
-import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Product from "../../../models/Produto";
 import { buscar } from "../../../services/Service";
 import CardProducts from "../cardproducts/CardProducts";
 
 
-
 function ListProducts() {
-
-    const navigate = useNavigate();
 
     const [products, setProducts] = useState<Product[]>([]);
 
@@ -33,13 +29,6 @@ function ListProducts() {
     }
 
     useEffect(() => {
-        if (token === '') {
-            // ToastAlerta('Você precisa estar logado', "info")
-            navigate('/');
-        }
-    }, [token])
-
-    useEffect(() => {
         buscarProducts()
     }, [products.length])
 
@@ -55,13 +44,10 @@ function ListProducts() {
                     wrapperClass="dna-wrapper mx-auto"
                 />
             )}
-            <div className='container mx-auto my-4 
-                grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'
-            >
+            <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-20'>
                 {products.map((product) => (
                     <CardProducts key={product.id} product={product} />
                 ))}
-
             </div>
         </>
     );

@@ -4,89 +4,80 @@ import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Categoria from "../../../models/Categoria";
 import Product from "../../../models/Produto";
-import { buscar, atualizar, cadastrar } from "../../../services/Service";
-
-
+import { buscar, atualizar, cadastrarProd, buscarCat } from "../../../services/Service";
 
 function FormProduct() {
-
     const navigate = useNavigate();
 
-    const [isLoading, setIsLoading] = useState<boolean>(false)
-    const [categorias, setCategorias] = useState<Categoria[]>([])
+    const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [categorias, setCategorias] = useState<Categoria[]>([]);
 
-    const [categoria, setCategoria] = useState<Categoria>({ id: 0, name: '', })
-    const [product, setProduct] = useState<Product>({} as Product)
+    const [categoria, setCategoria] = useState<Categoria>({ id: 0, name: '' });
+    const [product, setProduct] = useState<Product>({
+        id: 0,
+        nome: '',
+        preco: 0,
+        imagem: '',
+        descricao: '',
+        categoria: null,
+        usuario: null,
+    });
 
-    const { id } = useParams<{ id: string }>()
-
-    const { usuario, handleLogout } = useContext(AuthContext)
-    const token = usuario.token
+    const { id } = useParams<{ id: string }>();
+    const { usuario, handleLogout } = useContext(AuthContext);
+    const token = usuario.token;
 
     async function buscarProductPorId(id: string) {
         try {
             await buscar(`/produtos/${id}`, setProduct, {
                 headers: { Authorization: token }
-            })
+            });
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                handleLogout()
-            }
-        }
-    }
-
-    async function buscarCategoriaPorId(id: string) {
-        try {
-            await buscar(`/categorias/${id}`, setCategoria, {
-                headers: { Authorization: token }
-            })
-        } catch (error: any) {
-            if (error.toString().includes('403')) {
-                handleLogout()
+                handleLogout();
             }
         }
     }
 
     async function buscarCategorias() {
         try {
-            await buscar('/categorias', setCategorias, {
+            await buscarCat('/categorias', (data: Categoria[]) => {
+                setCategorias(data);
+            }, {
                 headers: { Authorization: token }
-            })
+            });
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                handleLogout()
+                handleLogout();
             }
         }
     }
 
     useEffect(() => {
         if (token === '') {
-            // ToastAlerta('Você precisa estar logado', "info");
             navigate('/');
         }
-    }, [token])
+    }, [token]);
 
     useEffect(() => {
-        buscarCategorias()
+        buscarCategorias();
 
         if (id !== undefined) {
-            buscarProductPorId(id)
+            buscarProductPorId(id);
         }
-    }, [id])
+    }, [id]);
 
     useEffect(() => {
-        setProduct({
-            ...product,
+        setProduct((prevProduct) => ({
+            ...prevProduct,
             categoria: categoria,
-        })
-    }, [categoria])
+        }));
+    }, [categoria]);
 
     function atualizarEstado(e: ChangeEvent<HTMLInputElement>) {
         setProduct({
             ...product,
             [e.target.name]: e.target.value,
-            categoria: categoria,
-            usuario: usuario,
         });
     }
 
@@ -95,48 +86,47 @@ function FormProduct() {
     }
 
     async function gerarNovaProduct(e: ChangeEvent<HTMLFormElement>) {
-        e.preventDefault()
-        setIsLoading(true)
-
+        e.preventDefault();
+        setIsLoading(true);
+    
+        const productData = {
+            ...product,
+            categoria: categoria,
+            usuario: usuario,
+        };
+    
         if (id !== undefined) {
             try {
-                await atualizar(`/produtos`, product, setProduct, {
+                await atualizar(`/produtos`, productData, setProduct, {
                     headers: {
                         Authorization: token,
                     },
                 });
-
-                // ToastAlerta('Product atualizada com sucesso', "sucesso")
-
+                alert("Produto atualizado com sucesso");
             } catch (error: any) {
+                alert("Erro ao atualizar o produto:");
                 if (error.toString().includes('403')) {
-                    handleLogout()
-                } else {
-                    // ToastAlerta('Erro ao atualizar a Product', "erro")
+                    handleLogout();
                 }
             }
-
         } else {
             try {
-                await cadastrar(`/produtos`, product, setProduct, {
+                await cadastrarProd(`/produtos`, productData, setProduct, {
                     headers: {
                         Authorization: token,
                     },
                 });
-
-                // ToastAlerta('Product cadastrada com sucesso', "sucesso");
-
+                alert("Produto cadastrado com sucesso");
             } catch (error: any) {
+                alert("Erro ao cadastrar o produto");
                 if (error.toString().includes('403')) {
-                    handleLogout()
-                } else {
-                    // ToastAlerta('Erro ao cadastrar a Product', "erro");
+                    handleLogout();
                 }
             }
         }
-
-        setIsLoading(false)
-        retornar()
+    
+        setIsLoading(false);
+        retornar();
     }
 
     const carregandoCategoria = categoria.name === '';
@@ -149,40 +139,65 @@ function FormProduct() {
 
             <form className="flex flex-col w-1/2 gap-4" onSubmit={gerarNovaProduct}>
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="titulo">Nome do Produto</label>
+                    <label htmlFor="nome">Nome do Produto</label>
                     <input
                         type="text"
-                        placeholder="Titulo"
-                        name="titulo"
+                        placeholder="Nome"
+                        name="nome"
                         required
                         className="border-2 border-slate-700 rounded p-2"
-                        value={product.name}
+                        value={product.nome}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
                 </div>
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="titulo">Preço</label>
+                    <label htmlFor="preco">Preço</label>
                     <input
-                        type="text"
-                        placeholder="Texto"
-                        name="texto"
+                        type="number"
+                        placeholder="Preço"
+                        name="preco"
                         required
                         className="border-2 border-slate-700 rounded p-2"
-                        value={product.price}
+                        value={product.preco}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                    />
+                </div>
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="imagem">Imagem</label>
+                    <input
+                        type="text"
+                        placeholder="Imagem URL"
+                        name="imagem"
+                        required
+                        className="border-2 border-slate-700 rounded p-2"
+                        value={product.imagem}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                    />
+                </div>
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="descricao">Descrição</label>
+                    <input
+                        type="text"
+                        placeholder="Descrição"
+                        name="descricao"
+                        required
+                        className="border-2 border-slate-700 rounded p-2"
+                        value={product.descricao}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
                 </div>
                 <div className="flex flex-col gap-2">
                     <p>Qual a categoria do produto?</p>
-                    <select name="categoria" id="categoria" className='border p-2 border-slate-800 rounded'
-                        onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}
+                    <select
+                        name="categoria"
+                        id="categoria"
+                        className='border p-2 border-slate-800 rounded'
+                        onChange={(e) => setCategoria(categorias.find(cat => cat.id === parseInt(e.currentTarget.value)) || { id: 0, name: '' })}
                     >
-                        <option value="" selected disabled>Selecione um Categoria</option>
-
+                        <option value="" disabled selected>Selecione uma Categoria</option>
                         {categorias.map((categoria) => (
-                            <option value={categoria.id} >{categoria.name}</option>
+                            <option key={categoria.id} value={categoria.id}>{categoria.nome}</option>
                         ))}
-
                     </select>
                 </div>
                 <button

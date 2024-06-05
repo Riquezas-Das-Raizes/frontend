@@ -11,9 +11,10 @@ import Perfil from "./pages/perfil/Perfil";
 import ListaCategoria from "./components/categoria/listacategoria/ListaCategoria";
 import FormCategoria from "./components/categoria/formcategoria/FormCategoria";
 import DeletarCategoria from "./components/categoria/deletarcategoria/DeletarCategoria";
-import ListProducts from "./components/products/listproducts/ListProducts";
 import DeleteProduct from "./components/products/deleteproducts/DelProducts";
 import FormProduct from "./components/products/formproducts/FormProducts";
+import ListProductsAdmin from "./components/products/listproductsadmin/ListProductsAdmin";
+import ListProducts from "./components/products/listproducts/ListProducts";
 
 function App() {
   return (
@@ -31,7 +32,8 @@ function App() {
             <Route path="/deletarcategoria/:id" element={<DeletarCategoria />} />
             <Route path="/cadastrarcategoria" element={<FormCategoria />} />
             <Route path="/editarcategoria/:id" element={<FormCategoria />} />
-            <Route path="/produtos" element={<ListProducts />} />
+            <Route path="/produtos" element={<ListProductsAdmin />} />
+            <Route path="/listarprodutos" element={<ListProducts />} />
             <Route path="/deletarproduto/:id" element={<DeleteProduct />} />
             <Route path="/cadastrarproduto" element={<FormProduct />} />
             <Route path="/editarproduto/:id" element={<FormProduct />} />
