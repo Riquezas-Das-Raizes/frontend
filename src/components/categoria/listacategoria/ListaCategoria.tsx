@@ -4,6 +4,7 @@ import { buscar } from "../../../services/Service";
 import { AuthContext } from "../../../contexts/AuthContext";
 import CardCategoria from "../cardcategoria/CardCategoria";
 import { useNavigate } from "react-router-dom"; // Uncomment if navigation is needed
+import { DNA } from "react-loader-spinner";
 
 function ListaCategoria() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
@@ -39,7 +40,17 @@ function ListaCategoria() {
 
   return (
     <>
-      <div className="flex m-2 justify-center align-center">
+    {categorias.length === 0 && (
+                <DNA
+                    visible={true}
+                    height="200"
+                    width="200"
+                    ariaLabel="dna-loading"
+                    wrapperStyle={{}}
+                    wrapperClass="dna-wrapper mx-auto"
+                />
+            )}
+      <div className="flex m-2 justify-center align-center p-16">
         {categorias.map((categoria) => (
           <CardCategoria key={categoria.id} categoria={categoria} />
         ))}

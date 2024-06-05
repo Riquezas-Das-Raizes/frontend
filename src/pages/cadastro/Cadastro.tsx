@@ -18,6 +18,7 @@ function Cadastro() {
     usuario: "",
     senha: "",
     foto: "",
+    admin: false,
   });
 
   useEffect(() => {
