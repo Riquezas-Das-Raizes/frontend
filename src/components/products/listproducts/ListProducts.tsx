@@ -83,8 +83,6 @@ function ListProducts() {
   useEffect(() => {
     buscarProducts();
   }, [selectedCategory]);
-  console.log("produtos: ", products);
-  console.log("categorias: ", categories);
 
   return (
     <div className="container mx-auto my-4">
