@@ -107,7 +107,7 @@ function FormCategoria() {
                         onChange={(e: ChangeEvent<HTMLInputElement>) => stateActually(e)}
                     />
                 </div>
-                <button className="rounded text-slate-100 bg-indigo-400 hover:bg-indigo-800 w-1/2 py-2 mx-auto flex justify-center" type="submit">
+                <button className="rounded text-slate-100 bg-custom-green hover:bg-custom-emerald w-1/2 py-2 mx-auto flex justify-center" type="submit">
                     {
                         isLoading ? (
                             <RotatingLines strokeColor='white' strokeWidth='5' animationDuration='0.75' width='24' visible={true} />

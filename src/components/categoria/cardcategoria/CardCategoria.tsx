@@ -1,7 +1,6 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../../../contexts/AuthContext";
+import { Link } from "react-router-dom";
 import Categoria from "../../../models/Categoria";
+import { Pencil, Trash } from "@phosphor-icons/react";
 
 
 interface CardCategoriaProps {
@@ -19,18 +18,18 @@ function CardCategoria({ categoria }: CardCategoriaProps) {
       <div className="flex">
         <Link
           to={`/editarcategoria/${categoria.id}`}
-          className="w-full text-slate-100 bg-yellow-700 hover:bg-yellow-900
-                        flex items-center justify-center py-2"
+          className="w-full text-slate-100 bg-custom-green hover:bg-custom-green
+                        flex items-center justify-center py-2" title="Editar"
         >
-          <button>Editar</button>
+          <button><Pencil size={25} /></button>
         </Link>
 
         <Link
           to={`/deletarcategoria/${categoria.id}`}
-          className="text-slate-100 bg-red-700 hover:bg-[rgb(218,20,0)] w-full 
-                        flex items-center justify-center"
+          className="text-slate-100 bg-custom-red w-full 
+                        flex items-center justify-center" title="Deletar"
         >
-          <button>Deletar</button>
+          <button><Trash size={25} /></button>
         </Link>
       </div>
     </div>
