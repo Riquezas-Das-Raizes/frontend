@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom"
 import { AuthContext } from "../../../contexts/AuthContext"
 import Product from "../../../models/Produto"
 import { buscar, deletar } from "../../../services/Service"
+import { hotAlerta } from "../../../util/hotAlerta"
 
 
 function DeleteProduct() {
@@ -34,7 +35,7 @@ function DeleteProduct() {
 
     useEffect(() => {
         if (token === '') {
-            // ToastAlerta('Você precisa estar logado', "info")
+            hotAlerta('Você precisa estar logado', "info")
             navigate('/')
         }
     }, [token])
@@ -55,13 +56,13 @@ function DeleteProduct() {
                 }
             })
 
-            // ToastAlerta('Product apagada com sucesso', "sucesso")
+            hotAlerta('Product apagada com sucesso', "sucesso")
 
         } catch (error: any) {
             if (error.toString().includes('403')) {
                 handleLogout()
             }else {
-                // ToastAlerta('Erro ao deletar a product.', "erro")
+                hotAlerta('Erro ao deletar a product.', "erro")
             }
         }
 
@@ -87,8 +88,8 @@ function DeleteProduct() {
                     Produto
                 </header>
                 <div className="p-4">
-                    <p className='text-xl h-full'>{product.name}</p>
-                    <p>{product.price}</p>
+                    <p className='text-xl h-full'>{product.nome}</p>
+                    <p>{product.preco}</p>
                 </div>
                 <div className="flex">
                     <button 

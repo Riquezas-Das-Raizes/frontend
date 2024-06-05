@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import login from "../../assets/login.jpg";
 import ModalProduct from "../../components/products/modalproducts/ModalProducts";
+import { hotAlerta } from "../../util/hotAlerta";
 
 function Perfil() {
   const { usuario } = useContext(AuthContext);
@@ -10,7 +11,7 @@ function Perfil() {
 
   useEffect(() => {
     if (usuario.token === "") {
-      alert("Você precisa estar logado");
+      hotAlerta("Você precisa estar logado", 'info');
       navigate("/login");
     }
   }, [usuario.token, navigate]);
@@ -34,8 +35,13 @@ function Perfil() {
       {usuario.admin && (
         <div className="flex justify-around gap-4 ">
           <div className="flex flex-col justify-around gap-4">
-              <ModalProduct/>
-              <Link to="/produtos" className='text-center rounded font-bold text-yellow-900  border-yellow-900 hover:bg-yellow-900 hover:text-white border-solid  border-2 py-2  px-4'>Listar Produtos</Link>
+            <ModalProduct />
+            <Link
+              to="/produtos"
+              className="text-center rounded font-bold text-yellow-900  border-yellow-900 hover:bg-yellow-900 hover:text-white border-solid  border-2 py-2  px-4"
+            >
+              Listar Produtos
+            </Link>
           </div>
         </div>
       )}

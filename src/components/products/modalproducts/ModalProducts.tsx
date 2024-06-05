@@ -1,18 +1,16 @@
 import Popup from "reactjs-popup";
 
-
-import 'reactjs-popup/dist/index.css';
-import './ModalProducts.css' 
+import "reactjs-popup/dist/index.css";
+import "./ModalProducts.css";
 import FormProduct from "../formproducts/FormProducts";
 
-
 function ModalProduct() {
-    return (
-        <>
-            <Popup
-                trigger={
-                    <button 
-                        className=' rounded
+  return (
+    <>
+      <Popup
+        trigger={
+          <button
+            className=" rounded
                         font-bold
                         text-yellow-900 
                         border-yellow-900
@@ -21,16 +19,17 @@ function ModalProduct() {
                         border-solid 
                         border-2
                         py-2 
-                        px-4'>
-                        Cadastrar Novo Produto
-                    </button>
-                }
-                modal
-            >
-                <FormProduct />
-            </Popup>
-        </>
-    );
+                        px-4"
+          >
+            Cadastrar Novo Produto
+          </button>
+        }
+        modal
+      >
+        <FormProduct />
+      </Popup>
+    </>
+  );
 }
 
 export default ModalProduct;

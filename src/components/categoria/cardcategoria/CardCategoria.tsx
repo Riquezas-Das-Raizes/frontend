@@ -1,6 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import { AuthContext } from "../../../contexts/AuthContext";
+import { Link } from "react-router-dom";
 import Categoria from "../../../models/Categoria";
 
 
@@ -14,7 +12,7 @@ function CardCategoria({ categoria }: CardCategoriaProps) {
       <header className="py-2 px-6 bg-[#ADC178] text-white font-bold text-2xl">
         Categoria
       </header>
-      <p className="p-8 text-3xl bg-slate-200 h-full">{categoria.name}</p>
+      <p className="p-8 text-3xl bg-slate-200 h-full">{categoria.nome}</p>
 
       <div className="flex">
         <Link
