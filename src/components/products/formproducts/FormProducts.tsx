@@ -5,6 +5,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import Categoria from "../../../models/Categoria";
 import Product from "../../../models/Produto";
 import { buscar, atualizar, cadastrarProd, buscarCat } from "../../../services/Service";
+import { hotAlerta } from "../../../util/hotAlerta";
 
 function FormProduct() {
     const navigate = useNavigate();
@@ -12,7 +13,7 @@ function FormProduct() {
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [categorias, setCategorias] = useState<Categoria[]>([]);
 
-    const [categoria, setCategoria] = useState<Categoria>({ id: 0, name: '' });
+    const [categoria, setCategoria] = useState<Categoria>({ id: 0, nome: '' });
     const [product, setProduct] = useState<Product>({
         id: 0,
         nome: '',
@@ -102,9 +103,9 @@ function FormProduct() {
                         Authorization: token,
                     },
                 });
-                alert("Produto atualizado com sucesso");
+                hotAlerta("Produto atualizado com sucesso", 'sucesso');
             } catch (error: any) {
-                alert("Erro ao atualizar o produto:");
+                hotAlerta("Erro ao atualizar o produto:", 'erro');
                 if (error.toString().includes('403')) {
                     handleLogout();
                 }
@@ -116,9 +117,9 @@ function FormProduct() {
                         Authorization: token,
                     },
                 });
-                alert("Produto cadastrado com sucesso");
+                hotAlerta("Produto cadastrado com sucesso", 'sucesso');
             } catch (error: any) {
-                alert("Erro ao cadastrar o produto");
+                hotAlerta("Erro ao cadastrar o produto", 'erro');
                 if (error.toString().includes('403')) {
                     handleLogout();
                 }
@@ -192,7 +193,7 @@ function FormProduct() {
                         name="categoria"
                         id="categoria"
                         className='border p-2 border-slate-800 rounded'
-                        onChange={(e) => setCategoria(categorias.find(cat => cat.id === parseInt(e.currentTarget.value)) || { id: 0, name: '' })}
+                        onChange={(e) => setCategoria(categorias.find(cat => cat.id === parseInt(e.currentTarget.value)) || { id: 0, nome: '' })}
                     >
                         <option value="" disabled selected>Selecione uma Categoria</option>
                         {categorias.map((categoria) => (
