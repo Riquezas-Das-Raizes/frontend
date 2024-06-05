@@ -19,7 +19,7 @@ function ProductCategory() {
 
   useEffect(() => {
     buscarProdutos();
-  }, [id]); // Remova [produtos.length] para evitar loop infinito
+  }, [id]);
 
   console.log(produtos);
   return (
