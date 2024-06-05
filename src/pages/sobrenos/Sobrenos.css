@@ -9,4 +9,14 @@
     min-height: 70vh;
     background-size: cover;
     background-position: center;
+  
 }
+
+
+.card-image {
+    width: auto; 
+    height: auto; 
+    max-width: none; 
+    
+  }
+  
