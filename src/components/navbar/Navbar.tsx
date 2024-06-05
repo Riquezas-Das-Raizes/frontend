@@ -11,6 +11,7 @@ import {
   X,
 } from "@phosphor-icons/react";
 import { buscarCat } from "../../services/Service";
+import { hotAlerta } from "../../util/hotAlerta";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ function Navbar() {
 
   function logout() {
     handleLogout();
-    alert("O usuário foi desconectado com sucesso!");
+    hotAlerta("O usuário foi desconectado com sucesso!", 'sucesso');
     navigate("/");
   }
 
