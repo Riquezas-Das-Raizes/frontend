@@ -4,6 +4,7 @@ import { AuthContext } from "../../../contexts/AuthContext"
 import { buscar, deletar } from "../../../services/Service"
 import { RotatingLines } from "react-loader-spinner"
 import Categoria from "../../../models/Categoria"
+import { hotAlerta } from "../../../util/hotAlerta"
 
 
 function DeletarCategoria() {
@@ -34,7 +35,7 @@ function DeletarCategoria() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+            hotAlerta('Você precisa estar logado', 'info')
             navigate('/')
         }
     }, [token])
@@ -55,13 +56,13 @@ function DeletarCategoria() {
                 }
             })
 
-            alert('Categoria apagada com sucesso')
+            hotAlerta('Categoria apagada com sucesso', 'sucesso')
 
         } catch (error: any) {
             if (error.toString().includes('403')) {
                 handleLogout()
             }else {
-                alert('Erro ao deletar a categoria.')
+                hotAlerta('Erro ao deletar a categoria.', 'erro')
             }
         }
 
@@ -83,7 +84,7 @@ function DeletarCategoria() {
                     className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>
                     Categoria
                 </header>
-                <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.name}</p>
+                <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.nome}</p>
                 <div className="flex">
                     <button 
                         className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2'

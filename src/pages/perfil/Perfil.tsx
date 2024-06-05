@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import login from "../../assets/login.jpg";
 import ModalProduct from "../../components/products/modalproducts/ModalProducts";
+import { hotAlerta } from "../../util/hotAlerta";
 
 function Perfil() {
   const { usuario } = useContext(AuthContext);
@@ -10,7 +11,7 @@ function Perfil() {
 
   useEffect(() => {
     if (usuario.token === "") {
-      alert("Você precisa estar logado");
+      hotAlerta("Você precisa estar logado", 'info');
       navigate("/login");
     }
   }, [usuario.token, navigate]);

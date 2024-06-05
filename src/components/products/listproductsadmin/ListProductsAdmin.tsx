@@ -5,6 +5,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import Product from "../../../models/Produto";
 import { buscar } from "../../../services/Service";
 import CardProductsAdmin from "../cardproductsadmin/CardProductsAdmin";
+import { hotAlerta } from "../../../util/hotAlerta";
 
 
 function ListProductsAdmin() {
@@ -33,7 +34,7 @@ function ListProductsAdmin() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado')
+            hotAlerta('Você precisa estar logado', 'info')
             navigate('/');
         }
     }, [token])

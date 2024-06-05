@@ -15,11 +15,13 @@ import DeleteProduct from "./components/products/deleteproducts/DelProducts";
 import FormProduct from "./components/products/formproducts/FormProducts";
 import ListProductsAdmin from "./components/products/listproductsadmin/ListProductsAdmin";
 import ListProducts from "./components/products/listproducts/ListProducts";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <>
       <AuthProvider>
+        <Toaster/>
         <BrowserRouter>
           <Navbar />
           <Routes>
