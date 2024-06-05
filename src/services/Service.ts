@@ -28,7 +28,11 @@ export const cadastrarProd = async(
   }
 }
 
-export const buscarCat = async (url: string, setDados: Function, header: Object) => {
+export const buscarCat = async (
+  url: string,
+  setDados: Function,
+  header: Object,
+) => {
   try {
     const resposta = await api.get(url, header);
     setDados(resposta.data);

@@ -2,7 +2,7 @@ import Product from '../../../models/Produto';
 
 
 interface CardProductProps {
-    product: Product
+  product: Product;
 }
 
 function CardProducts({ product }: CardProductProps) {
@@ -23,4 +23,4 @@ function CardProducts({ product }: CardProductProps) {
     )
 }
 
-export default CardProducts
+export default CardProducts;

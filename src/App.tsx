@@ -34,6 +34,8 @@ function App() {
             <Route path="/editarcategoria/:id" element={<FormCategoria />} />
             <Route path="/produtos" element={<ListProductsAdmin />} />
             <Route path="/listarprodutos" element={<ListProducts />} />
+            <Route path="/produtos" element={<ListProducts />} />
+            <Route path="/produtos/:nome" element={<ListProducts />} />
             <Route path="/deletarproduto/:id" element={<DeleteProduct />} />
             <Route path="/cadastrarproduto" element={<FormProduct />} />
             <Route path="/editarproduto/:id" element={<FormProduct />} />

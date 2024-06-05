@@ -2,7 +2,7 @@ import { useState, useContext, useEffect } from "react";
 import { DNA } from "react-loader-spinner";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Product from "../../../models/Produto";
-import { buscar } from "../../../services/Service";
+import { buscarPor } from "../../../services/Service";
 import CardProducts from "../cardproducts/CardProducts";
 
 

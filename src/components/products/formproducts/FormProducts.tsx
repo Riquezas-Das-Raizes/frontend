@@ -81,9 +81,9 @@ function FormProduct() {
         });
     }
 
-    function retornar() {
-        navigate('/produtos');
-    }
+  function retornar() {
+    navigate("/produtos");
+  }
 
     async function gerarNovaProduct(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -129,13 +129,13 @@ function FormProduct() {
         retornar();
     }
 
-    const carregandoCategoria = categoria.name === '';
+  const carregandoCategoria = categoria.nome === "";
 
-    return (
-        <div className="container flex flex-col mx-auto items-center">
-            <h1 className="text-4xl text-center my-8">
-                {id !== undefined ? 'Editar Produto' : 'Cadastrar Produto'}
-            </h1>
+  return (
+    <div className="container flex flex-col mx-auto items-center">
+      <h1 className="text-4xl text-center my-8">
+        {id !== undefined ? "Editar Produto" : "Cadastrar Produto"}
+      </h1>
 
             <form className="flex flex-col w-1/2 gap-4" onSubmit={gerarNovaProduct}>
                 <div className="flex flex-col gap-2">
@@ -223,3 +223,4 @@ function FormProduct() {
 }
 
 export default FormProduct;
+

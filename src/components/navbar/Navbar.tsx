@@ -53,14 +53,21 @@ function Navbar() {
               Home
             </Link>
             {categorias.map((categoria) => (
-              <Link key={categoria.id} to={`/categoria/${categoria.id}`} className="hover:underline">
+              <Link
+                key={categoria.id}
+                to={`/categoria/${categoria.id}`}
+                className="hover:underline hover:underline-offset-4"
+              >
                 {categoria.nome}
               </Link>
             ))}
-            <Link to="/sobrenos" className="hover:underline">
+            <Link
+              to="/sobrenos"
+              className="hover:underline hover:underline-offset-4"
+            >
               Sobre Nós
             </Link>
-            <Link to="#" className="hover:underline">
+            <Link to="#" className="hover:underline hover:underline-offset-4">
               Artesões
             </Link>
           </div>
