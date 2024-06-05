@@ -5,22 +5,15 @@ import 'reactjs-popup/dist/index.css';
 import './ModalLogin.css' 
 
 import Login from "../../../pages/login/Login";
-import { SignIn } from "@phosphor-icons/react";
 
-
-function ModalLogin() {
+function ModalLogin({triggerElement}) {
     return (
         <>
-            <Popup
-                trigger={
-                    <button >
-                        <SignIn size={25} />
-                    </button>
-                }
-                modal
+            <Popup 
+                trigger={triggerElement}
+               modal
             >
-                <div>Login</div>
-                {/* <Login /> */}
+                <Login />
             </Popup>
         </>
     );

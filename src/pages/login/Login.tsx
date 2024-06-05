@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import UsuarioLogin from "../../models/UsuarioLogin";
 import { AuthContext } from "../../contexts/AuthContext";
+import ModalRegister from "../../components/modal/modalregister/ModalRegister";
 
 function Login() {
   const navigate = useNavigate();
@@ -34,19 +35,19 @@ function Login() {
 
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center font-bold bg-custom-beige ">
+      <div className="grid grid-cols-1 lg:grid-cols-1 place-items-center font-bold bg-custom-beige rounded-lg shadow-lg">
         <form
           className="flex justify-center items-center flex-col w-1/2 gap-4"
           onSubmit={login}
         >
-          <h2 className="text-slate-900 text-5xl ">Entrar</h2>
+          <h2 className="text-custom-black text-5xl ">Entrar</h2>
           <div className="flex flex-col w-full">
             <label htmlFor="usuario">Usuário</label>
             <input
               type="text"
               id="usuario"
               name="usuario"
-              placeholder="Usuario"
+              placeholder="Usuario (Email)"
               className="border-2 border-slate-700 rounded p-2"
               value={usuarioLogin.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -89,13 +90,13 @@ function Login() {
           <hr className="border-slate-800 w-full" />
 
           <p>
-            Ainda não tem uma conta?{" "}
-            <Link to="/cadastrar" className="text-custom-red hover:underline">
+            Ainda não tem uma conta? {" "}
+            <ModalRegister triggerElement={
+            <Link to="/" className="text-custom-red hover:underline">
               Cadastre-se
-            </Link>
-          </p>
+            </Link>}/>
+          </p> 
         </form>
-        <div className="fundoLogin hidden lg:block"></div>
       </div>
     </>
   );
