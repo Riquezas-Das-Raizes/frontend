@@ -4,6 +4,7 @@ import { buscar } from "../../../services/Service";
 import { AuthContext } from "../../../contexts/AuthContext";
 import CardCategoria from "../cardcategoria/CardCategoria";
 import { useNavigate } from "react-router-dom"; // Uncomment if navigation is needed
+import { hotAlerta } from "../../../util/hotAlerta";
 
 function ListaCategoria() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
@@ -18,7 +19,7 @@ function ListaCategoria() {
       });
     } catch (error: any) {
       if (error.toString().includes("403")) {
-        alert("O token expirou, favor logar novamente");
+        hotAlerta("O token expirou, favor logar novamente", 'info');
         handleLogout();
       }
     }
@@ -26,7 +27,7 @@ function ListaCategoria() {
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado");
+      hotAlerta("Você precisa estar logado", 'info');
       navigate("/login");
     } else {
       listar();

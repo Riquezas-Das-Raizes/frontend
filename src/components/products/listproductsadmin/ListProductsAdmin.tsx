@@ -5,6 +5,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import Product from "../../../models/Produto";
 import { buscar } from "../../../services/Service";
 import CardProductsAdmin from "../cardproductsadmin/CardProductsAdmin";
+import { hotAlerta } from "../../../util/hotAlerta";
 
 function ListProductsAdmin() {
   const navigate = useNavigate();
@@ -28,16 +29,17 @@ function ListProductsAdmin() {
     }
   }
 
-  useEffect(() => {
-    if (token === "") {
-      alert("Você precisa estar logado");
-      navigate("/");
-    }
-  }, [token]);
 
-  useEffect(() => {
-    buscarProducts();
-  }, [products.length]);
+    useEffect(() => {
+        if (token === '') {
+            hotAlerta('Você precisa estar logado', 'info')
+            navigate('/');
+        }
+    }, [token])
+
+    useEffect(() => {
+      buscarProducts();
+    }, [products.length]);
 
   return (
     <>
