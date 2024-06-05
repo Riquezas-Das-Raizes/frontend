@@ -12,24 +12,23 @@ function ModalProduct() {
           <button
             className=" rounded
                         font-bold
-                        text-yellow-900 
-                        border-yellow-900
-                        hover:bg-yellow-900
+                        text-custom-emerald 
+                        border-custom-green
+                        hover:bg-custom-emerald
                         hover:text-white
                         border-solid 
                         border-2
                         py-2 
-                        px-4"
-          >
-            Cadastrar Novo Produto
-          </button>
-        }
-        modal
-      >
-        <FormProduct />
-      </Popup>
-    </>
-  );
+                        px-4'>
+                        Cadastrar Produto
+                    </button>
+                }
+                modal
+            >
+                <FormProduct />
+            </Popup>
+        </>
+    );
 }
 
 export default ModalProduct;
