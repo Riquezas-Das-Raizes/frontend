@@ -1,3 +1,5 @@
+import ModalProduct from "../../components/products/modalproducts/ModalProducts"
+
 function Home() {
   return (
     <>
@@ -44,11 +46,9 @@ function Home() {
                             flex 
                             justify-around 
                             gap-4
-                        "
-            >
-              <a
-                href=""
-                className="
+
+                        ">
+                            <a href="/produtos" className="
                                 rounded
                                 font-bold
                                 text-yellow-900 
@@ -64,8 +64,15 @@ function Home() {
             </div>
           </div>
 
-          <div
-            className="
+                        <div className="flex justify-around gap-4 ">
+                            <div className="flex justify-around gap-4">
+                                <ModalProduct/>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div className="
                         flex 
                         justify-center
                     "
