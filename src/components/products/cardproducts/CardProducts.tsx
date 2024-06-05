@@ -16,6 +16,7 @@ function CardProducts({ product }: CardProductProps) {
   return (
     <>
       <div
+      
         className="max-w-xs overflow-hidden shadow-lg bg-white transition-transform hover:scale-105 relative rounded-3xl"
         onMouseEnter={() => setMostrar(true)}
         onMouseLeave={() => setMostrar(false)}
