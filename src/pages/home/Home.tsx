@@ -1,4 +1,5 @@
-import ModalProduct from "../../components/products/modalproducts/ModalProducts"
+import { Link } from "react-router-dom";
+import ModalProduct from "../../components/products/modalproducts/ModalProducts";
 
 function Home() {
   return (
@@ -47,8 +48,11 @@ function Home() {
                             justify-around 
                             gap-4
 
-                        ">
-                            <a href="/produtos" className="
+                        "
+            >
+              <Link
+                to={"/produtos"}
+                className="
                                 rounded
                                 font-bold
                                 text-yellow-900 
@@ -60,19 +64,15 @@ function Home() {
                             "
               >
                 Confira os nossos produtos
-              </a>
+              </Link>
+            </div>
+            <div className="flex justify-around gap-4 ">
+              <ModalProduct />
             </div>
           </div>
 
-                        <div className="flex justify-around gap-4 ">
-                            <div className="flex justify-around gap-4">
-                                <ModalProduct/>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div className="
+          <div
+            className="
                         flex 
                         justify-center
                     "

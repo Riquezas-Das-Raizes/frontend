@@ -13,17 +13,26 @@ export const buscar = async (
   setDados(resposta.data);
 };
 
-export const cadastrar = async(
-  url: string, 
-  dados: Object, 
-  setDados: Function, 
-  header: Object
-  ) => {
-  const resposta = await api.post(url, dados, header)
-  setDados(resposta.data)
-}
+export const buscarPor = async (url: string, setDados: Function) => {
+  const resposta = await api.get(url);
+  setDados(resposta.data);
+};
 
-export const buscarCat = async (url: string, setDados: Function, header: Object) => {
+export const cadastrar = async (
+  url: string,
+  dados: Object,
+  setDados: Function,
+  header: Object,
+) => {
+  const resposta = await api.post(url, dados, header);
+  setDados(resposta.data);
+};
+
+export const buscarCat = async (
+  url: string,
+  setDados: Function,
+  header: Object,
+) => {
   try {
     const resposta = await api.get(url, header);
     setDados(resposta.data);
