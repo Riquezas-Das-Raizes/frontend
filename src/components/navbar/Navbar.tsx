@@ -11,6 +11,7 @@ import {
   X,
 } from "@phosphor-icons/react";
 import { buscarCat } from "../../services/Service";
+import ModalLogin from "../modal/modallogin/ModalLogin";
 import { hotAlerta } from "../../util/hotAlerta";
 
 function Navbar() {
@@ -76,8 +77,8 @@ function Navbar() {
             >
               Sobre Nós
             </Link>
-            <Link to="#" className="hover:underline hover:underline-offset-4">
-              Artesões
+            <Link to="/artesaos" className="hover:underline hover:underline-offset-4">
+              Artesãos
             </Link>
           </div>
           <div className="absolute inset-x-0 top-1/2 transform -translate-y-full flex justify-center items-center">
@@ -108,9 +109,7 @@ function Navbar() {
                 </Link>
               </>
             ) : (
-              <Link to="/Login" className="hover:underline" title="Login">
-                <SignIn size={25} />
-              </Link>
+              <ModalLogin triggerElement={<SignIn size={25} className="hover:underline cursor-pointer" title="Login"/>} />
             )}
           </div>
         </div>
@@ -136,8 +135,8 @@ function Navbar() {
             <Link to="/sobrenos" className="hover:underline">
               Sobre Nós
             </Link>
-            <Link to="#" className="hover:underline">
-              Artesões
+            <Link to="/artesaos" className="hover:underline">
+              Artesãos
             </Link>
             <Link to="#" className="hover:underline">
               <ShoppingBag size={25} />
@@ -157,10 +156,8 @@ function Navbar() {
                 </Link>
               </>
             ) : (
-              <Link to="/Login" className="hover:underline" title="Login">
-                <SignIn size={25} />
-              </Link>
-            )}
+              <ModalLogin triggerElement={<SignIn size={25} className="hover:underline cursor-pointer" title="Login"/>} />
+              )}
           </div>
         </div>
       </nav>
