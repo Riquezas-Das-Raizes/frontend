@@ -4,6 +4,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 import Categoria from "../../models/Categoria";
 import { ShoppingBag, SignIn, SignOut, User, List, X } from "@phosphor-icons/react";
 import { buscarCat } from "../../services/Service";
+// import ModalLogin from "../modal/modallogin/ModalLogin";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -67,8 +68,8 @@ function Navbar() {
             >
               Sobre Nós
             </Link>
-            <Link to="#" className="hover:underline hover:underline-offset-4">
-              Artesões
+            <Link to="/artesaos" className="hover:underline hover:underline-offset-4">
+              Artesãos
             </Link>
           </div>
           <div className="absolute inset-x-0 top-1/2 transform -translate-y-full flex justify-center items-center">
@@ -114,8 +115,8 @@ function Navbar() {
             <Link to="/sobrenos" className="hover:underline">
               Sobre Nós
             </Link>
-            <Link to="#" className="hover:underline">
-              Artesões
+            <Link to="/artesaos" className="hover:underline">
+              Artesãos
             </Link>
             <Link to="#" className="hover:underline">
               <ShoppingBag size={25} />

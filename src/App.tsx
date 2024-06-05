@@ -15,6 +15,7 @@ import DeleteProduct from "./components/products/deleteproducts/DelProducts";
 import FormProduct from "./components/products/formproducts/FormProducts";
 import ListProductsAdmin from "./components/products/listproductsadmin/ListProductsAdmin";
 import ListProducts from "./components/products/listproducts/ListProducts";
+import Artesaos from "./pages/artesaos/Artesaos";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
             <Route path="/cadastrarproduto" element={<FormProduct />} />
             <Route path="/editarproduto/:id" element={<FormProduct />} />
             <Route path="/perfil" element={<Perfil />} />
+            <Route path="/artesaos" element={<Artesaos />} />
           </Routes>
           <Footer />
         </BrowserRouter>
