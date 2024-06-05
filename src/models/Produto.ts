@@ -1,7 +1,7 @@
 import Categoria from "./Categoria";
 import Usuario from "./Usuario";
 
-export default interface Produto {
+export default interface Product {
   id: number,
   nome: string,
   preco: number,

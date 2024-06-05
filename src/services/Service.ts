@@ -13,6 +13,35 @@ export const buscar = async (
   setDados(resposta.data);
 };
 
+export const cadastrarProd = async(
+  url: string, 
+  dados: Object, 
+  setDados: Function, 
+  header: Object
+  ) => {
+  try {
+    const resposta = await api.post(url, dados, header);
+    setDados(resposta.data);
+  } catch (error) {
+    console.error("Erro ao cadastrar produto:", error);
+    throw error;
+  }
+}
+
+export const buscarCat = async (
+  url: string,
+  setDados: Function,
+  header: Object,
+) => {
+  try {
+    const resposta = await api.get(url, header);
+    setDados(resposta.data);
+  } catch (error) {
+    console.error("Erro ao buscar categorias:", error);
+    throw error;
+  }
+};
+
 export const cadastrar = async (
   url: string,
   dados: Object,
@@ -26,7 +55,7 @@ export const cadastrarCategoria = async (
   url: string,
   dados: Object,
   setDados: Function,
-  header: Object
+  header: Object,
 ) => {
   const resposta = await api.post(url, dados, header);
   setDados(resposta.data);
@@ -35,7 +64,7 @@ export const cadastrarCategoria = async (
 export const login = async (url: string, dados: Object, setDados: Function) => {
   const resposta = await api.post(url, dados);
   setDados(resposta.data);
-}
+};
 
 export const atualizar = async (
   url: string,
@@ -50,5 +79,3 @@ export const atualizar = async (
 export const deletar = async (url: string, header: Object) => {
   await api.delete(url, header);
 };
-
-

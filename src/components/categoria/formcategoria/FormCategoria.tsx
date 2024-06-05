@@ -103,7 +103,7 @@ function FormCategoria() {
                         placeholder="Nome"
                         name='nome'
                         className="border-2 border-slate-700 rounded p-2"
-                        value={categoria.nome || ''}
+                        value={categoria.name || ''}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => stateActually(e)}
                     />
                 </div>
