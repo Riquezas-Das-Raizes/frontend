@@ -4,6 +4,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 import Categoria from "../../models/Categoria";
 import { ShoppingBag, SignIn, SignOut, User, List, X } from "@phosphor-icons/react";
 import { buscarCat } from "../../services/Service";
+import ModalLogin from "../modais/modallogin/ModalLogin";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -94,9 +95,7 @@ function Navbar() {
                 </Link>
               </>
             ) : (
-              <Link to="/Login" className="hover:underline" title="Login">
-                <SignIn size={25} />
-              </Link>
+              <ModalLogin triggerElement={<SignIn size={25} className="hover:underline cursor-pointer" title="Login" />} />
             )}
           </div>
         </div>
@@ -130,9 +129,7 @@ function Navbar() {
                 </Link>
               </>
             ) : (
-              <Link to="/Login" className="hover:underline" title="Login">
-                <SignIn size={25} />
-              </Link>
+              <ModalLogin triggerElement={<SignIn size={25} className="hover:underline cursor-pointer" title="Login" />} />
             )}
           </div>
         </div>
