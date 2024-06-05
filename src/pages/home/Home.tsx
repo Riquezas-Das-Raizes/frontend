@@ -1,5 +1,4 @@
 import Carrossel from "../../components/carrossel/Carrossel"
-import "./Home.css"
 
 function Home() {
     return (
