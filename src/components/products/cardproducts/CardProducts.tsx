@@ -14,9 +14,9 @@ function CardProducts({ product }: CardProductProps) {
       <div>
         <div className="flex w-full bg-indigo-400 py-2 px-4 items-center gap-4">
           <img
-            src={product.usuario?.foto}
+            src={product.imagem}
             className="h-12 rounded-full"
-            alt={product.usuario?.nome}
+            alt={product.nome}
           />
           <h3 className="text-lg font-bold text-center uppercase">
             {product.nome}

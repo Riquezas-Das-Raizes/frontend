@@ -1,27 +1,18 @@
 import { useState, useContext, useEffect } from "react";
-import { DNA } from "react-loader-spinner";
+import { Triangle } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Product from "../../../models/Produto";
-import { buscar, buscarPor } from "../../../services/Service";
+import { buscarPor } from "../../../services/Service";
 import CardProducts from "../cardproducts/CardProducts";
 
 function ListProducts() {
-  const navigate = useNavigate();
-
   const [products, setProducts] = useState<Product[]>([]);
-
-  const { usuario, handleLogout } = useContext(AuthContext);
-  const token = usuario.token;
 
   async function buscarProducts() {
     try {
       await buscarPor("/produtos", setProducts);
-    } catch (error: any) {
-      if (error.toString().includes("403")) {
-        handleLogout();
-      }
-    }
+    } catch (error: any) {}
   }
 
   useEffect(() => {
@@ -31,14 +22,17 @@ function ListProducts() {
   return (
     <>
       {products.length === 0 && (
-        <DNA
-          visible={true}
-          height="200"
-          width="200"
-          ariaLabel="dna-loading"
-          wrapperStyle={{}}
-          wrapperClass="dna-wrapper mx-auto"
-        />
+        <div className="justify-center text-center flex p-5">
+          <Triangle
+            visible={true}
+            height="130"
+            width="130"
+            color="#4fa94d"
+            ariaLabel="triangle-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+          />
+        </div>
       )}
       <div
         className="container mx-auto my-4 
