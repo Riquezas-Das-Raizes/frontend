@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { buscar } from "../../../services/Service";
 import Product from "../../../models/Produto";
@@ -7,8 +7,9 @@ import { DNA } from "react-loader-spinner";
 
 function ProductCategory() {
   const { id } = useParams<{ id: string }>();
-  console.log(id);
   const [produtos, setProdutos] = useState<Product[]>([]);
+  const [categoria, setCategoria] = useState<{ nome: string } | null>(null);
+
   async function buscarProdutos() {
     try {
       await buscar(`/categorias/${id}/produto`, setProdutos, {});
@@ -17,14 +18,27 @@ function ProductCategory() {
     }
   }
 
+  async function buscarCategoria() {
+    try {
+      await buscar(`/categorias/${id}`, setCategoria, {});
+    } catch (err) {
+      console.log("erro: ", err);
+    }
+  }
+
   useEffect(() => {
     buscarProdutos();
+    buscarCategoria();
   }, [id]);
 
-  console.log(produtos);
   return (
     <>
-      {produtos.length == 0 ? (
+      {categoria && (
+        <div className="text-center text-2xl font-bold mb-8">
+          {categoria.nome}
+        </div>
+      )}
+      {produtos.length === 0 ? (
         <DNA
           visible={true}
           height="200"
