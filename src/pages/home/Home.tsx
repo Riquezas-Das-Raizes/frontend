@@ -10,7 +10,7 @@ function Home() {
             <p className="text-xl text-yellow-900">Aprecie as riquezas que nossas raízes nos proporcionam!</p>
 
             <div className="flex justify-around gap-4">
-              <Link to="/listarprodutos" className="rounded font-bold text-yellow-900 border-yellow-900 border-solid border-2 py-2 px-4">
+              <Link to="/produtos" className="rounded font-bold text-yellow-900 border-yellow-900 border-solid border-2 py-2 px-4">
                 Confira os nossos produtos
               </Link>
             </div>
