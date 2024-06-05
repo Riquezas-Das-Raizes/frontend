@@ -22,7 +22,7 @@ function CardProducts({ product }: CardProductProps) {
         onMouseLeave={() => setMostrar(false)}
       >
         <div className="relative ">
-          <div className="font-bold text-xl text-center mb-5">
+          <div className="font-bold text-xl text-center mb-5 ">
             {product.nome}
           </div>
 
