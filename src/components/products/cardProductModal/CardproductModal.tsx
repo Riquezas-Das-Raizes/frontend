@@ -11,7 +11,7 @@ function CardProductModal({ product }: CardProductProps) {
   return (
     <Popup
       trigger={
-        <button className="rounded font-bold text-yellow-900 border-yellow-900 hover:bg-yellow-900 hover:text-white border-solid border-2 py-2 px-4 z-10">
+        <button className="rounded font-bold text-white bg-custom-red rounded-3xl py-2 px-4 z-10">
           Eu Quero
         </button>
       }
