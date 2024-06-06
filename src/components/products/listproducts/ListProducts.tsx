@@ -1,5 +1,5 @@
 import { useState, useContext, useEffect } from "react";
-import { DNA } from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Product from "../../../models/Produto";
 import CardProducts from "../cardproducts/CardProducts";
@@ -103,14 +103,16 @@ function ListProducts() {
 
       {loading ? (
         <div className="flex justify-center items-center h-64">
-          <DNA
-            visible={true}
-            height="200"
-            width="200"
-            ariaLabel="dna-loading"
-            wrapperStyle={{}}
-            wrapperClass="dna-wrapper"
-          />
+          <ThreeDots
+                    visible={true}
+                    height="80"
+                    width="80"
+                    color="#74884F"
+                    radius="9"
+                    ariaLabel="three-dots-loading"
+                    wrapperStyle={{}}
+                    wrapperClass=""
+                    />
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-10 px-4 md:px-10 lg:px-20">
