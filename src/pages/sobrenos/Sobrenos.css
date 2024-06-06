@@ -2,14 +2,25 @@
     background-color: #e9eae2;
 }
 
-.fundosobrenos{
-    background-image: url("https://i.imgur.com/kd0xRVO.jpeg");
+.quemsomosimg{
+    background-image: url("https://ik.imagekit.io/natashadev/Riqueza%20das%20Ra%C3%ADzes/kd0xRVO.jpeg?updatedAt=1717686923183");
     background-repeat: no-repeat;
-    width: auto;
-    height: auto;
-    /* min-height: 75vh; */
+    /* width: auto;
+    height: auto; */
+    min-height: 75vh;
     background-size: cover;
+    min-width:100vh;
 }
+.missaoimg{
+    background-image: url("https://ik.imagekit.io/natashadev/Riqueza%20das%20Ra%C3%ADzes/istockphoto-1256772459-1024x1024.jpg?updatedAt=1717686922204");
+    background-repeat: no-repeat;
+    /* width: auto;
+    height: auto; */
+    min-height: 75vh;
+    background-size: cover;
+    min-width:100vh;
+}
+
 
 
 .card-image {
