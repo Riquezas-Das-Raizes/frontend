@@ -4,6 +4,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 import ModalProduct from "../../components/products/modalproducts/ModalProducts";
 import ModalCategoria from "../../components/categoria/modalcategoria/ModalCategoria";
 import { hotAlerta } from "../../util/hotAlerta";
+import ModalListarCategoria from "../../components/categoria/modallistarcategoria/ModalListarCategoria";
 
 function Perfil() {
   const { usuario } = useContext(AuthContext);
@@ -43,7 +44,8 @@ function Perfil() {
             <div className="flex justify-around gap-4 mb-5">
               <div className="flex justify-around gap-4">
                 <ModalCategoria/>
-                <Link to="/categorias" className='text-center rounded font-bold text-custom-emerald  border-custom-green hover:bg-custom-emerald hover:text-white border-solid  border-2 py-2  px-4'>Listar Categoria</Link>
+                {/* <Link to="/categorias" className='text-center rounded font-bold text-custom-emerald  border-custom-green hover:bg-custom-emerald hover:text-white border-solid  border-2 py-2  px-4'>Listar Categoria</Link> */}
+                <ModalListarCategoria/>
               </div>
             </div>
 
