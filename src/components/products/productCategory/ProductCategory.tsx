@@ -48,11 +48,14 @@ function ProductCategory() {
           wrapperClass="dna-wrapper mx-auto"
         />
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-10 px-20">
-          {produtos.map((produto) => (
-            <CardProducts key={produto.id} product={produto} />
-          ))}
-        </div>
+        <div className="flex justify-center pt-10 px-4 sm:px-6 lg:px-20">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 w-full max-w-screen-xl">
+    {produtos.map((produto) => (
+      <CardProducts key={produto.id} product={produto} />
+    ))}
+  </div>
+</div>
+
       )}
     </>
   );
