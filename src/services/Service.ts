@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://backend-ou4a.onrender.com/",
+  baseURL: import.meta.env.VITE_API_URL
 });
 
 export const buscar = async (
