@@ -1,5 +1,5 @@
 import { useState, useContext, useEffect } from "react";
-import { DNA } from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Product from "../../../models/Produto";
@@ -44,13 +44,15 @@ function ListProductsAdmin() {
   return (
     <>
       {products.length === 0 && (
-        <DNA
-          visible={true}
-          height="200"
-          width="200"
-          ariaLabel="dna-loading"
-          wrapperStyle={{}}
-          wrapperClass="dna-wrapper mx-auto"
+        <ThreeDots
+        visible={true}
+        height="80"
+        width="80"
+        color="#74884F"
+        radius="9"
+        ariaLabel="three-dots-loading"
+        wrapperStyle={{}}
+        wrapperClass=""
         />
       )}
       <div
