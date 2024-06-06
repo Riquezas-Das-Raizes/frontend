@@ -43,6 +43,7 @@ function ListProductsAdmin() {
 
   return (
     <>
+    {/* <div className="flex justify-center items-center h-64"> */}
       {products.length === 0 && (
         <ThreeDots
         visible={true}
@@ -52,9 +53,11 @@ function ListProductsAdmin() {
         radius="9"
         ariaLabel="three-dots-loading"
         wrapperStyle={{}}
-        wrapperClass=""
-        />
-      )}
+        wrapperClass="mx-auto"
+        />)}
+
+        {/* </div> */}
+      
       <div
         className="container mx-auto my-4 
                 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-20"
