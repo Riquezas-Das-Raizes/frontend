@@ -51,7 +51,7 @@ function ListaCategoria() {
                     wrapperClass="dna-wrapper mx-auto"
                 />
             )}
-      <div className="flex m-2 justify-center align-center p-16">
+      <div className="flex m-2 justify-center align-center p-16 ">
         {categorias.map((categoria) => (
           <CardCategoria key={categoria.id} categoria={categoria} />
         ))}

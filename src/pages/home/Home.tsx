@@ -5,8 +5,8 @@ function Home() {
     return (
         <>
             <Carrossel />
-            <div className="bg-custom-beige size-full p-5 text-xl font-bold">
-                <h2> Lançamentos! </h2>
+            <div className="bg-custom-beige size-full p-5 mt-10 text-xl font-bold">
+                <h2 className="ml-16"> Lançamentos</h2>
                 <HomeProducts />
             </div>
         </>

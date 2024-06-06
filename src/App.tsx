@@ -4,7 +4,6 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import Home from "./pages/home/Home";
 import Sobrenos from "./pages/sobrenos/Sobrenos";
-import Contatos from "./pages/contatos/Contatos";
 import Login from "./pages/login/Login";
 import Cadastro from "./pages/cadastro/Cadastro";
 import Perfil from "./pages/perfil/Perfil";
@@ -13,7 +12,6 @@ import FormCategoria from "./components/categoria/formcategoria/FormCategoria";
 import DeletarCategoria from "./components/categoria/deletarcategoria/DeletarCategoria";
 import DeleteProduct from "./components/products/deleteproducts/DelProducts";
 import FormProduct from "./components/products/formproducts/FormProducts";
-import ListProductsAdmin from "./components/products/listproductsadmin/ListProductsAdmin";
 import ListProducts from "./components/products/listproducts/ListProducts";
 import Artesaos from "./pages/artesaos/Artesaos";
 import { Toaster } from "react-hot-toast";
@@ -28,7 +26,6 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/contatos" element={<Contatos />} />
             <Route path="/sobrenos" element={<Sobrenos />} />
             <Route path="/login" element={<Login />} />
             <Route path="/cadastrar" element={<Cadastro />} />

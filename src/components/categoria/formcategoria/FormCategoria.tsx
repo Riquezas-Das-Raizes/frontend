@@ -91,7 +91,9 @@ function FormCategoria() {
     }
 
     return (
-        <div className="container flex flex-col items-center justify-center mx-auto">
+        <div className="container flex flex-col items-center justify-center mx-auto
+        bg-gradient-to-b from-custom-beige to-white rounded-lg
+        shadow-lg px-10 py-5">
             <h1 className="text-4xl text-center my-8">
                 {id === undefined ? 'Cadastrar Categoria' : 'Editar Categoria'}
             </h1>

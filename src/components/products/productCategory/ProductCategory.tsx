@@ -34,7 +34,7 @@ function ProductCategory() {
   return (
     <>
       {categoria && (
-        <div className="text-center text-2xl font-bold mb-8">
+        <div className="text-center text-2xl font-bold pt-10">
           {categoria.nome}
         </div>
       )}
@@ -48,7 +48,7 @@ function ProductCategory() {
           wrapperClass="dna-wrapper mx-auto"
         />
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pt-10 px-20">
           {produtos.map((produto) => (
             <CardProducts key={produto.id} product={produto} />
           ))}
