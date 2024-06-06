@@ -8,7 +8,7 @@ function Sobrenos() {
           Sobre nós
         </h1>
         <div className="flex">
-          <div className="p-4">
+          <div className="p-4 w-3/5">
             <h2 className="p-5 text-center text-2xl font-bold">Quem somos?</h2>
             <p className="flex justify-center item-center p-4 text-xl">
               Somos Riqueza das Raízes! Somos mais do que uma simples loja
@@ -31,7 +31,7 @@ function Sobrenos() {
               profunda desses artesãos com a natureza.
             </p>
           </div>
-          <div className="fundosobrenos hidden lg:block m-5"></div>
+          <div className="fundosobrenos hidden lg:block m-5 w-2/5"></div>
         </div>
 
         <section className="">
