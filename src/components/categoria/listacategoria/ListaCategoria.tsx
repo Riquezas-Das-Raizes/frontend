@@ -41,6 +41,7 @@ function ListaCategoria() {
 
   return (
     <>
+    <div className="flex justify-center items-center h-64">
     {categorias.length === 0 && (
                    <ThreeDots
                     visible={true}
@@ -50,9 +51,10 @@ function ListaCategoria() {
                     radius="9"
                     ariaLabel="three-dots-loading"
                     wrapperStyle={{}}
-                    wrapperClass=""
+                    wrapperClass="dna-wrapper mx-auto"
                     />
             )}
+            </div>
       <div className="flex m-2 justify-center align-center p-16 
       bg-gradient-to-b from-custom-beige to-white rounded-lg
         shadow-lg px-10 py-10">

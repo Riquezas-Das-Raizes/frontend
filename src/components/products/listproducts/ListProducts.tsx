@@ -111,7 +111,7 @@ function ListProducts() {
                     radius="9"
                     ariaLabel="three-dots-loading"
                     wrapperStyle={{}}
-                    wrapperClass=""
+                    wrapperClass="mx-auto"
                     />
         </div>
       ) : (
