@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { buscar } from "../../../services/Service";
 import Product from "../../../models/Produto";
 import CardProducts from "../cardproducts/CardProducts";
-import { DNA } from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 
 function ProductCategory() {
   const { id } = useParams<{ id: string }>();
@@ -39,23 +39,25 @@ function ProductCategory() {
         </div>
       )}
       {produtos.length === 0 ? (
-        <DNA
-          visible={true}
-          height="200"
-          width="200"
-          ariaLabel="dna-loading"
-          wrapperStyle={{}}
-          wrapperClass="dna-wrapper mx-auto"
+        <div className="flex justify-center">
+        <ThreeDots
+        visible={true}
+        height="80"
+        width="80"
+        color="#74884F"
+        radius="9"
+        ariaLabel="three-dots-loading"
+        wrapperStyle={{}}
+        wrapperClass="" 
         />
       ) : (
         <div className="flex justify-center pt-10 px-4 sm:px-6 lg:px-20">
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 w-full max-w-screen-xl">
-    {produtos.map((produto) => (
-      <CardProducts key={produto.id} product={produto} />
-    ))}
-  </div>
-</div>
-
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 w-full max-w-screen-xl">
+            {produtos.map((produto) => (
+              <CardProducts key={produto.id} product={produto} />
+            ))}
+          </div>
+        </div>
       )}
     </>
   );
