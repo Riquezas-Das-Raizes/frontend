@@ -49,17 +49,6 @@ import { Link } from "react-router-dom";
                     </Link>
                 </SwiperSlide>
 
-                <SwiperSlide>
-                    <Link to='/artesanatos'>
-                <img 
-                    className="swiper-slide-img"
-                    src="https://ik.imagekit.io/natashadev/Riqueza%20das%20Ra%C3%ADzes/Green%20Minimalist%20Nature%20Quotes%20Desktop%20Wallpaper%20(2).png?updatedAt=1717678702582" 
-                    alt="Carrossel - Slide 03 Um e-commerce que oferece artesanato indigena focado em trazer uma renda justa para essas comunidades, aqui você encontra produtos autênticos!
-                    " 
-                />
-                </Link>
-                </SwiperSlide>
-
             </Swiper>
             </div>
             <div className="fundoMobile">
