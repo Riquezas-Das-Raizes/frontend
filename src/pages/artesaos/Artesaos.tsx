@@ -1,5 +1,4 @@
 import { Browser } from "@phosphor-icons/react";
-import "./Artesãos.css";
 
 function Artesaos() {
   return (
