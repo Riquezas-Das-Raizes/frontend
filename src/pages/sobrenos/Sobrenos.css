@@ -5,11 +5,10 @@
 .fundosobrenos{
     background-image: url("https://i.imgur.com/kd0xRVO.jpeg");
     background-repeat: no-repeat;
-    width: 225%;
-    min-height: 70vh;
+    width: auto;
+    height: auto;
+    /* min-height: 75vh; */
     background-size: cover;
-    background-position: center;
-  
 }
 
 
