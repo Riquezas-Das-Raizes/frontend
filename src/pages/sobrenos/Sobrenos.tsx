@@ -11,15 +11,10 @@ function Sobrenos() {
           </div>
           <div className=" flex-col self-center">
            
-            <p className="flex justify-center item-center p-4 text-xl">
-              Somos Riqueza das Raízes! Somos mais do que uma simples loja
-              virtual; somos um portal para a celebração da cultura, da arte e
-              da sustentabilidade. Nossa missão é trazer para você produtos
-              únicos e autênticos, feitos à mão pelos povos originários do
-              Brasil, conhecidos por muitos como indígenas. Através da nossa
-              plataforma, buscamos valorizar a riqueza cultural e as tradições
-              ancestrais que estes artesãos preservam e compartilham com tanto
-              orgulho.
+            <p className="flex justify-center item-center p-4 text-xl text-justify">
+            Somos Riqueza das Raízes! Mais do que uma simples loja virtual, somos um portal para a celebração da cultura, da arte e da sustentabilidade. Nossa missão é trazer para você produtos únicos e autênticos, feitos à mão pelos povos originários do Brasil, conhecidos por muitos como indígenas. Através da nossa plataforma, buscamos valorizar a riqueza cultural e as tradições ancestrais que estes artesãos preservam e compartilham com tanto orgulho.
+
+A Riqueza das Raízes foi desenvolvida com base no ODS 8 da ONU, que promove o trabalho decente e o crescimento econômico sustentável, inclusivo e sustentado.
             </p>
             </div>
          
@@ -27,13 +22,10 @@ function Sobrenos() {
             <div className="p-4  flex bg-custom-green max-sm:flex-col max-sm:w-full">
             <div className=" flex-col self-center">
             
-            <p className="flex justify-center item-center p-4 text-xl">
-              A Riqueza das Raízes tem como missão fomentar a economia
-              sustentável e o comércio justo, oferecendo uma plataforma onde a
-              autenticidade e a qualidade dos produtos artesanais indígenas
-              possam ser apreciadas e adquiridas. Cada item disponível em nossa
-              loja é um testemunho do talento, da criatividade e da conexão
-              profunda desses artesãos com a natureza.
+            <p className="flex justify-center item-center p-4 text-xl text-justify">
+            Na Riqueza das Raízes, nossa missão vai além da comercialização de produtos. Nós nos dedicamos a promover e valorizar a cultura e a arte dos povos originários do Brasil. Cada peça que oferecemos é uma expressão autêntica das tradições ancestrais e da criatividade dos artesãos indígenas, que, com habilidade e orgulho, mantêm viva a herança cultural de suas comunidades.
+
+Estamos comprometidos com a sustentabilidade e o comércio justo, garantindo que os artesãos recebam uma remuneração digna pelo seu trabalho, em alinhamento com o ODS 8 da ONU. Este objetivo visa promover o crescimento econômico inclusivo e sustentável, o emprego pleno e produtivo, e o trabalho decente para todos.
             </p>
             </div>
             <div className="missaoimg m-5 w-2/5 grid rounded-lg shadow-xl">
