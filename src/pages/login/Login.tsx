@@ -35,12 +35,12 @@ function Login() {
 
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-1 place-items-center font-bold bg-custom-beige rounded-lg shadow-lg">
+      <div className="fundoLogin flex justify-center font-bold bg-gradient-to-b from-custom-beige to-white rounded-lg shadow-lg py-10 max-w-sm ">
         <form
-          className="flex justify-center items-center flex-col w-1/2 gap-4"
+          className="flex justify-center items-center w-full px-10 flex-col gap-4"
           onSubmit={login}
         >
-          <h2 className="text-custom-black text-5xl ">Entrar</h2>
+          <h2 className="text-custom-emerald text-5xl ">Entrar</h2>
           <div className="flex flex-col w-full">
             <label htmlFor="usuario">Usuário</label>
             <input
@@ -48,7 +48,7 @@ function Login() {
               id="usuario"
               name="usuario"
               placeholder="Usuario (Email)"
-              className="border-2 border-slate-700 rounded p-2"
+              className="border-2 border-custom-emerald rounded p-2"
               value={usuarioLogin.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 atualizarEstado(e)
@@ -62,7 +62,7 @@ function Login() {
               id="senha"
               name="senha"
               placeholder="Senha"
-              className="border-2 border-slate-700 rounded p-2"
+              className="border-2 border-custom-emerald rounded p-2"
               value={usuarioLogin.senha}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 atualizarEstado(e)
