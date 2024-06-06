@@ -6,11 +6,11 @@ import './ModalLogin.css'
 
 import Login from "../../../pages/login/Login";
 
-function ModalLogin({triggerElement}) {
+function ModalLogin({triggerElement, titleElement}) {
     return (
         <>
             <Popup 
-                trigger={triggerElement}
+                trigger={triggerElement, titleElement}
                modal
             >
                 <Login />
