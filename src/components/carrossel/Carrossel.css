@@ -1,18 +1,42 @@
-/*Cor dos botões de Navegação*/
+
 :root {
     --swiper-theme-color: #ffffff;
   }
   
-  /*Tamanho e o posicionamento do Carrossel*/
+
   .swiper {
     height: 70vh;
     margin: 0;
   }
   
-  /*Estiliza a imagem do slide*/
   .swiper-slide-img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
+
+  @media screen and (max-width: 600px) {
+  .fundoMobile {
+    background-image: url("https://ik.imagekit.io/natashadev/Riqueza%20das%20Ra%C3%ADzes/Beige%20Green%20Aesthetic%20Decorative%20Background%20Instagram%20Story.png?updatedAt=1717680247272");
+    background-repeat: no-repeat;
+    width: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+  }
+
+    .fundoPc{
+        display: none;
+    }
+}
+
+  @media screen and (max-width: 600px) {
+    .fundoMobile{
+        display: none;
+    }
+
+    .fundoMobile{
+        display: flex;
+    }
+}
