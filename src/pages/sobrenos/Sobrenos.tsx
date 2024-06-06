@@ -5,7 +5,7 @@ function Sobrenos() {
     return (
       <div className="bg-custom-beige">
         <div className="flex flex-col">
-          <div className="p-4 flex">
+          <div className="p-4 flex max-sm:flex-col">
           <div className="quemsomosimg grid  m-5 w-2/5 rounded-lg shadow-xl"> 
           <h2 className="p-5 text-center text-9xl font-extrabold text-white grid grid-cols-1 place-items-center ">Quem somos</h2>
           </div>
@@ -24,7 +24,7 @@ function Sobrenos() {
             </div>
          
             </div>
-            <div className="p-4  flex bg-custom-green">
+            <div className="p-4  flex bg-custom-green max-sm:flex-col max-sm:w-full">
             <div className=" flex-col self-center">
             
             <p className="flex justify-center item-center p-4 text-xl">
@@ -77,15 +77,15 @@ function Sobrenos() {
                     <li>
                       <a
                         href="#" target = "_blank"
-                        className="text-gray-900 hover:text-custom-green dark:hover:text-white"
+                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
                       >
-                        <LinkedinLogo className="w- h-5" />
+                        <LinkedinLogo className="w-5 h-5" />
                       </a>
                     </li>
                     <li>
                       <a
                         href="https://github.com/ppbiancav" target = "_blank"
-                        className="text-gray-900 hover:text-custom-green dark:hover:text-white"
+                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
                       >
                         <GithubLogo className="w-5 h-5" />
                       </a>
@@ -116,7 +116,7 @@ function Sobrenos() {
                     <li>
                       <a
                         href="#" target = "_blank"
-                        className="text-gray-900 hover:text-custom-green dark:hover:text-white"
+                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
                       >
                         <LinkedinLogo className="w-5 h-5" />
                       </a>
@@ -124,7 +124,7 @@ function Sobrenos() {
                     <li>
                       <a
                         href="https://github.com/Gabriel-Aranda1406" target = "_blank"
-                        className="text-gray-900 hover:text-custom-green dark:hover:text-white"
+                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
                       >
                         <GithubLogo className="w-5 h-5" />
                       </a>
@@ -155,7 +155,7 @@ function Sobrenos() {
                     <li>
                       <a
                         href="#" target = "_blank"
-                        className="text-gray-900 hover:text-text-custom-green dark:hover:text-white"
+                        className="text-gray-200 hover:text-text-gray-900 dark:hover:text-white"
                       >
                         <LinkedinLogo className="w-5 h-5" />
                       </a>
@@ -163,7 +163,7 @@ function Sobrenos() {
                     <li>
                       <a
                         href="https://github.com/Lorenabelo" target = "_blank"
-                        className="text-gray-900 hover:text-custom-green dark:hover:text-white"
+                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
                       >
                         <GithubLogo className="w-5 h-5" />
                       </a>
@@ -194,7 +194,7 @@ function Sobrenos() {
                     <li>
                       <a
                         href="https://www.linkedin.com/in/natasha-morais-dev/" target="_blank"
-                        className="text-gray-900 hover:text-custom-green dark:hover:text-white"
+                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
                       >
                         <LinkedinLogo className="w-5 h-5" />
                       </a>
@@ -202,7 +202,7 @@ function Sobrenos() {
                     <li>
                       <a
                         href="https://github.com/natashamorais" target="_blank"
-                        className="text-gray-900 hover:text-custom-green dark:hover:text-white"
+                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
                       >
                         <GithubLogo className="w-5 h-5" />
                       </a>
@@ -233,7 +233,7 @@ function Sobrenos() {
                     <li>
                       <a
                         href="#" target = "_blank"
-                        className="text-gray-900 hover:text-custom-green dark:hover:text-white"
+                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
                       >
                         <LinkedinLogo className="w-5 h-5" />
                       </a>
@@ -241,7 +241,7 @@ function Sobrenos() {
                     <li>
                       <a
                         href="https://github.com/thaissan" target = "_blank"
-                        className="text-gray-900 hover:text-custom-green dark:hover:text-white"
+                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
                       >
                         <GithubLogo className="w-5 h-5" />
                       </a>
@@ -272,7 +272,7 @@ function Sobrenos() {
                     <li>
                       <a
                         href="#" target = "_blank"
-                        className="text-gray-900 hover:text-custom-green dark:hover:text-white"
+                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
                       >
                         <LinkedinLogo className="w-5 h-5" />
                       </a>
@@ -280,7 +280,7 @@ function Sobrenos() {
                     <li>
                       <a
                         href="https://github.com/ViniOM" target = "_blank"
-                        className="text-gray-900 hover:text-custom-green dark:hover:text-white"
+                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
                       >
                         <GithubLogo className="w-5 h-5" />
                       </a>
@@ -313,7 +313,7 @@ function Sobrenos() {
                     <li>
                       <a
                         href="https://www.linkedin.com/in/vitor-monea/" target = "_blank"
-                        className="text-gray-900 hover:text-custom-green dark:hover:text-white"
+                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
                       >
                         <LinkedinLogo className="w-5 h-5" />
                       </a>
@@ -321,7 +321,7 @@ function Sobrenos() {
                     <li>
                       <a
                         href="https://github.com/vmonea" target = "_blank"
-                        className="text-gray-900 hover:text-custom-green dark:hover:text-white" 
+                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white" 
                       >
                         <GithubLogo className="w-5 h-5" />
                       </a>
@@ -351,7 +351,7 @@ function Sobrenos() {
                     <li>
                       <a
                         href="https://www.linkedin.com/in/vitor-monea/" target = "_blank"
-                        className="text-gray-900 hover:text-custom-green dark:hover:text-white"
+                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
                       >
                         <LinkedinLogo className="w-5 h-5" />
                       </a>
@@ -359,7 +359,7 @@ function Sobrenos() {
                     <li>
                       <a
                         href="https://github.com/vmonea" target = "_blank"
-                        className="text-gray-900 hover:text-custom-green dark:hover:text-white" 
+                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white" 
                       >
                         <GithubLogo className="w-5 h-5" />
                       </a>
