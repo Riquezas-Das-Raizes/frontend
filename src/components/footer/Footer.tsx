@@ -1,4 +1,4 @@
-import { EnvelopeSimple, GithubLogo, LinkedinLogo, WhatsappLogo } from "@phosphor-icons/react";
+import { EnvelopeSimple, GithubLogo, InstagramLogo, LinkedinLogo, WhatsappLogo } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
 
 function Footer() {
@@ -16,27 +16,28 @@ function Footer() {
             </div>
             <div className="flex flex-col items-center md:items-start mb-4 md:mb-0">
               <strong className="text-lg pb-2">Sobre a Loja</strong>
-              <Link to="/artesaos" className="hover:underline">
+              <Link to="/artesaos" className="">
                 Origem Produtos
               </Link>
-              <Link to="/missao" className="hover:underline">
+              <Link to="/sobrenos" className="">
                 Missão
               </Link>
             </div>
             <div className="flex flex-col items-center md:items-start mb-4 md:mb-0">
               <strong className="text-lg pb-2">Institucional</strong>
-              <Link to="/sobrenos" className="hover:underline">
+              <Link to="/sobrenos" className="">
                 Quem somos
               </Link>
-              <Link to="/contatos" className="hover:underline">
-                Contatos
+              <Link to="/sobrenos#equipe" className="">
+                Equipe
               </Link>
             </div>
             <div className="flex flex-col items-center md:items-start mb-4 md:mb-0">
               <strong className="text-lg pb-2">Redes Sociais</strong>
               <div className="flex flex-row gap-5">
-                <LinkedinLogo size={32} />
-                <GithubLogo size={32} />
+                <LinkedinLogo size={24} />
+                <GithubLogo size={24} />
+                <InstagramLogo size={24}/>
               </div>
             </div>
           </div>
@@ -44,22 +45,22 @@ function Footer() {
           <div className="flex flex-col p-4">
             <div className="flex flex-col sm:flex-row gap-4 mb-4 md:mb-0">
               <a
-                className="flex items-center justify-center px-6 py-1 h-10 text-center 
-                bg-custom-beige text-custom-emerald font-bold border border-custom-emerald rounded
-                active:text-white hover:bg-custom-black hover:text-white"
+                className="flex items-center justify-center px-2 py-1 h-10 text-center 
+                text-white font-bold   rounded
+                active:text-white  hover:text-custom-emerald"
                 href="/"
               >
                 <WhatsappLogo size={27} />
-                Whatsapp
+                WhatsApp
               </a>
               <a
                 className="flex items-center justify-center px-6 py-1 h-10 text-center
-                bg-custom-beige border text-custom-emerald font-bold border-custom-emerald rounded
-                hover:bg-custom-black hover:text-white active:bg-white"
+                font-bold rounded text-white
+                active:text-white  hover:text-custom-emerald"
                 href="/"
               >
                 <EnvelopeSimple size={27} />
-                Email
+                E-mail
               </a>
             </div>
             <div className="font-light text-center pt-4">
