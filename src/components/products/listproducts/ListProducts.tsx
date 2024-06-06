@@ -85,31 +85,35 @@ function ListProducts() {
   }, [selectedCategory]);
 
   return (
-    <div className="container mx-auto my-4">
-      <select
-        value={selectedCategory ?? ""}
-        onChange={(e) => setSelectedCategory(Number(e.target.value))}
-        className="mb-4 p-2 border border-gray-300 rounded"
-      >
-        <option value="">Todas as Categorias</option>
-        {categories.map((category) => (
-          <option key={category.id} value={category.id}>
-            {category.nome}
-          </option>
-        ))}
-      </select>
+    <div className="container mx-auto my-4 p-4">
+      <div className="flex justify-center mt-4">
+        <select
+          value={selectedCategory ?? ""}
+          onChange={(e) => setSelectedCategory(Number(e.target.value))}
+          className="p-2 border border-gray-300 rounded w-full max-w-xs"
+        >
+          <option value="">Todas as Categorias</option>
+          {categories.map((category) => (
+            <option key={category.id} value={category.id}>
+              {category.nome}
+            </option>
+          ))}
+        </select>
+      </div>
 
       {loading ? (
-        <DNA
-          visible={true}
-          height="200"
-          width="200"
-          ariaLabel="dna-loading"
-          wrapperStyle={{}}
-          wrapperClass="dna-wrapper mx-auto"
-        />
+        <div className="flex justify-center items-center h-64">
+          <DNA
+            visible={true}
+            height="200"
+            width="200"
+            ariaLabel="dna-loading"
+            wrapperStyle={{}}
+            wrapperClass="dna-wrapper"
+          />
+        </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-10 px-4 md:px-10 lg:px-20">
           {products.length === 0 ? (
             <p className="col-span-full text-center">
               Nenhum produto encontrado.
