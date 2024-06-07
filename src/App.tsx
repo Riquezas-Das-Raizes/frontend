@@ -24,7 +24,7 @@ function App() {
         <Toaster/>
         <BrowserRouter>
           <Navbar />
-          <Routes>
+          <Routes key={window.location.pathname}>
             <Route path="/" element={<Home />} />
             <Route path="/sobrenos" element={<Sobrenos />} />
             <Route path="/login" element={<Login />} />

@@ -2,14 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import Categoria from "../../models/Categoria";
-import {
-  ShoppingBag,
-  SignIn,
-  SignOut,
-  User,
-  List,
-  X,
-} from "@phosphor-icons/react";
+import { ShoppingBag, SignIn, SignOut, User, List, X } from "@phosphor-icons/react";
 import { buscarCat } from "../../services/Service";
 import ModalLogin from "../modal/modallogin/ModalLogin";
 import { hotAlerta } from "../../util/hotAlerta";
@@ -40,9 +33,9 @@ function Navbar() {
   return (
     <>
       <nav
-      className={`bg-custom-green text-white shadow-xl py-4 px-6 flex justify-center items-center w-full mt-4 sm:mt-20 relative`}
-
-
+        className={`bg-custom-green text-white shadow-xl py-4 px-6 flex-col justify-center items-center ${
+          menuOpen && "mt-0"
+        } mt-0 sm:mt-20 relative`}
       >
         <div className="flex justify-between w-full items-center sm:hidden">
           <Link to="/" className="flex justify-center items-center">
@@ -53,7 +46,15 @@ function Navbar() {
             />
           </Link>
           <button className="text-white" onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? <X size={32} /> : <List size={32} />}
+            {menuOpen ? (
+              <span title="Fechar menu">
+                <X size={32} />
+              </span>
+            ) : (
+              <span title="Abrir menu">
+                <List size={32} />
+              </span>
+            )}
           </button>
         </div>
 
@@ -92,12 +93,16 @@ function Navbar() {
           </div>
           <div className="flex flex-grow justify-start space-x-4 pl-10">
             <Link to="#" className="hover:underline">
-              <ShoppingBag size={25} />
+              <span title="Carrinho">
+                <ShoppingBag size={25} />
+              </span>
             </Link>
             {usuario.token ? (
               <>
                 <Link to="/perfil" className="hover:underline" title="Perfil">
-                  <User size={25} />
+                  <span title="Perfil">
+                    <User size={25} />
+                  </span>
                 </Link>
                 <Link
                   to=""
@@ -105,11 +110,13 @@ function Navbar() {
                   className="hover:underline"
                   title="Sair"
                 >
-                  <SignOut size={25} />
+                  <span title="Sair">
+                    <SignOut size={25} />
+                  </span>
                 </Link>
               </>
             ) : (
-              <ModalLogin triggerElement={<SignIn size={25} className="hover:underline cursor-pointer" title="Login"/>} />
+              <ModalLogin triggerElement={<SignIn size={25} className="hover:underline cursor-pointer" />} />
             )}
           </div>
         </div>
@@ -139,12 +146,16 @@ function Navbar() {
               Artesãos
             </Link>
             <Link to="#" className="hover:underline">
-              <ShoppingBag size={25} />
+              <span title="Carrinho">
+                <ShoppingBag size={25} />
+              </span>
             </Link>
             {usuario.token ? (
               <>
                 <Link to="/perfil" className="hover:underline" title="Perfil">
-                  <User size={25} />
+                  <span title="Perfil">
+                    <User size={25} />
+                  </span>
                 </Link>
                 <Link
                   to=""
@@ -152,12 +163,14 @@ function Navbar() {
                   className="hover:underline"
                   title="Sair"
                 >
-                  <SignOut size={25} />
+                  <span title="Sair">
+                    <SignOut size={25} />
+                  </span>
                 </Link>
               </>
             ) : (
-              <ModalLogin triggerElement={<SignIn size={25} className="hover:underline cursor-pointer" title="Login"/>} />
-              )}
+              <ModalLogin triggerElement={<SignIn size={25} className="hover:underline cursor-pointer" />} />
+            )}
           </div>
         </div>
       </nav>
