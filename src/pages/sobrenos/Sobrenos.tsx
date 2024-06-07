@@ -1,5 +1,6 @@
 import { LinkedinLogo, GithubLogo } from "@phosphor-icons/react";
 import "./Sobrenos.css";
+import { teamMembers, TeamMember } from "../../util/teamMembers";
 
 function Sobrenos() {
     return (
@@ -43,333 +44,68 @@ function Sobrenos() {
         
         </div>
 
-        <section id="equipe" className="">
-          <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-            <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
-              <h2 className="mb-4 text-4xl tracking-tight font-extrabold">
-                Nossa Equipe
-              </h2>
-              <p className="lg:mb-16 sm:text-xl ">
-                Conheça nossa equipe dedicada que trabalha incansavelmente para
-                trazer o melhor da cultura indígena até você.
-              </p>
-            </div>
-            <div className="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
-              <div className="items-center bg-gray-50 rounded-lg shadow-2xl sm:flex dark:bg-custom-green dark:border-gray-700">
-                <a href="#">
-                  <img
-                    className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
-                    src="https://github.com/ppbiancav.png"
-                    alt="Bianca Avatar"
-                  />
-                </a>
-                <div className="p-5">
-                  <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    <a href="#">Bianca Vasconcelos</a>
-                  </h3>
-                  <span className="text-gray-500 dark:text-white">
-                    Desenvolvedora
-                  </span>
-                  <p className="mt-3 mb-4 font-light text-gray-500 dark:text-gray-200">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonummy libero at
-                  </p>
-                  <ul className="flex space-x-4 sm:mt-0">
-                    <li>
-                      <a
-                        href="#" target = "_blank"
-                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                      >
-                        <LinkedinLogo className="w-5 h-5" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://github.com/ppbiancav" target = "_blank"
-                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                      >
-                        <GithubLogo className="w-5 h-5" />
-                      </a>
-                    </li>
-                    
-                  </ul>
-                </div>
-              </div>
-              <div className="items-center bg-gray-50 rounded-lg shadow-2xl sm:flex dark:bg-custom-green dark:border-gray-700">
-                <a href="#">
-                  <img
-                    className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
-                    src="https://github.com/Gabriel-Aranda1406.png"
-                    alt="Gabriel Avatar"
-                  />
-                </a>
-                <div className="p-5">
-                  <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    <a href="#">Gabriel Aranda</a>
-                  </h3>
-                  <span className="text-gray-500 dark:text-white">
-                    Desenvolvedor
-                  </span>
-                  <p className="mt-3 mb-4 font-light text-gray-500 dark:text-gray-200">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonummy libero at
-                  </p>
-                  <ul className="flex space-x-4 sm:mt-0">
-                    <li>
-                      <a
-                        href="#" target = "_blank"
-                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                      >
-                        <LinkedinLogo className="w-5 h-5" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://github.com/Gabriel-Aranda1406" target = "_blank"
-                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                      >
-                        <GithubLogo className="w-5 h-5" />
-                      </a>
-                    </li>
-                  
-                  </ul>
-                </div>
-              </div>
-              <div className="items-center bg-gray-50 rounded-lg shadow-2xl sm:flex dark:bg-custom-green dark:border-gray-700">
-                <a href="#">
-                  <img
-                    className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
-                    src="https://github.com/Lorenabelo.png"
-                    alt="Lorena Avatar"
-                  />
-                </a>
-                <div className="p-5">
-                  <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    <a href="#">Lorena Belo</a>
-                  </h3>
-                  <span className="text-gray-500 dark:text-white">
-                    Desenvolvedora
-                  </span>
-                  <p className="mt-3 mb-4 font-light text-gray-500 dark:text-gray-200">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonummy libero at
-                  </p>
-                  <ul className="flex space-x-4 sm:mt-0">
-                    <li>
-                      <a
-                        href="#" target = "_blank"
-                        className="text-gray-200 hover:text-text-gray-900 dark:hover:text-white"
-                      >
-                        <LinkedinLogo className="w-5 h-5" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://github.com/Lorenabelo" target = "_blank"
-                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                      >
-                        <GithubLogo className="w-5 h-5" />
-                      </a>
-                    </li>
-                   
-                  </ul>
-                </div>
-              </div>
-              <div className="items-center bg-gray-50 rounded-lg shadow-2xl sm:flex dark:bg-custom-green dark:border-gray-700">
-                <a href="#">
-                  <img
-                    className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
-                    src="https://github.com/natashamorais.png"
-                    alt="Natasha Avatar"
-                  />
-                </a>
-                <div className="p-5">
-                  <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    <a href="#">Natasha Morais</a>
-                  </h3>
-                  <span className="text-gray-500 dark:text-white">
-                    Desenvolvedore
-                  </span>
-                  <p className="mt-3 mb-4 font-light text-gray-500 dark:text-gray-200">
-                   Meu objetivo  como desenvolvedore é proporcionar uma boa experiência para o usuário.
-                  </p>
-                  <ul className="flex space-x-4 sm:mt-0">
-                    <li>
-                      <a
-                        href="https://www.linkedin.com/in/natasha-morais-dev/" target="_blank"
-                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                      >
-                        <LinkedinLogo className="w-5 h-5" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://github.com/natashamorais" target="_blank"
-                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                      >
-                        <GithubLogo className="w-5 h-5" />
-                      </a>
-                    </li>
-                   
-                  </ul>
-                </div>
-              </div>
-              <div className="items-center bg-gray-50 rounded-lg shadow-2xl sm:flex dark:bg-custom-green dark:border-gray-700">
-                <a href="#">
-                  <img
-                    className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
-                    src="https://github.com/thaissan.png"
-                    alt="Thais Avatar"
-                  />
-                </a>
-                <div className="p-5">
-                  <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    <a href="#">Thaís Santos</a>
-                  </h3>
-                  <span className="text-gray-500 dark:text-white">
-                    Desenvolvedora
-                  </span>
-                  <p className="mt-3 mb-4 font-light text-gray-500 dark:text-gray-200">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonummy libero at
-                  </p>
-                  <ul className="flex space-x-4 sm:mt-0">
-                    <li>
-                      <a
-                        href="#" target = "_blank"
-                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                      >
-                        <LinkedinLogo className="w-5 h-5" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://github.com/thaissan" target = "_blank"
-                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                      >
-                        <GithubLogo className="w-5 h-5" />
-                      </a>
-                    </li>
-                  
-                  </ul>
-                </div>
-              </div>
-              <div className="items-center bg-gray-50 rounded-lg shadow-2xl sm:flex dark:bg-custom-green dark:border-gray-700">
-                <a href="#">
-                  <img
-                    className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
-                    src="https://github.com/ViniOM.png"
-                    alt="Vitor Avatar"
-                  />
-                </a>
-                <div className="p-5">
-                  <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    <a href="#">Vinicios Gabriel Oliveira</a>
-                  </h3>
-                  <span className="text-gray-500 dark:text-white">
-                    Desenvolverdor
-                  </span>
-                  <p className="mt-3 mb-4 font-light text-gray-500 dark:text-gray-200">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonummy libero at
-                  </p>
-                  <ul className="flex space-x-4 sm:mt-0">
-                    <li>
-                      <a
-                        href="#" target = "_blank"
-                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                      >
-                        <LinkedinLogo className="w-5 h-5" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://github.com/ViniOM" target = "_blank"
-                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                      >
-                        <GithubLogo className="w-5 h-5" />
-                      </a>
-                    </li>
-                   
-                  </ul>
-                </div>
-              </div>
-              <div className="items-center bg-gray-50 rounded-lg shadow-2xl sm:flex dark:bg-custom-green dark:border-gray-700">
-                <a href="#">
-                  <img
-                    className="rounded-lg sm:rounded-none sm:rounded-l-lg flex-none"
-                    src="https://github.com/vmonea.png"
-                    alt="Vitor Avatar"
-                  />
-                </a>
-                <div className="p-5">
-                  <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    <a href="#">
-                    Vitor Monea
-                    </a>
-                  </h3>
-                  <span className="text-gray-500 dark:text-white">
-                    Desenvolvedor
-                  </span>
-                  <h1 className="mt-3 mb-4 font-light text-gray-500 dark:text-gray-200">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonummy libero at. 
-                  </h1>
-                  <ul className="flex space-x-4 sm:mt-0">
-                    <li>
-                      <a
-                        href="https://www.linkedin.com/in/vitor-monea/" target = "_blank"
-                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                      >
-                        <LinkedinLogo className="w-5 h-5" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://github.com/vmonea" target = "_blank"
-                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white" 
-                      >
-                        <GithubLogo className="w-5 h-5" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div className="items-center bg-gray-50 rounded-lg shadow-2xl sm:flex dark:bg-custom-green dark:border-gray-700">
-                <a href="#">
-                  <img
-                    className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg"
-                    src="https://github.com/yasminelamark.png"
-                    alt="Yasmine Avatar"
-                  />
-                </a>
-                <div className="p-5">
-                  <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    <a href="#">Yasmine Lamark</a>
-                  </h3>
-                  <span className="text-gray-500 dark:text-white">
-                    Desenvolvedora
-                  </span>
-                  <p className="mt-3 mb-4 font-light text-gray-500 dark:text-gray-200">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nonummy libero at 
-                  </p>
-                  <ul className="flex space-x-4 sm:mt-0">
-                    <li>
-                      <a
-                        href="https://www.linkedin.com/in/vitor-monea/" target = "_blank"
-                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
-                      >
-                        <LinkedinLogo className="w-5 h-5" />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://github.com/vmonea" target = "_blank"
-                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white" 
-                      >
-                        <GithubLogo className="w-5 h-5" />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+        <section id="equipe">
+        <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+          <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+            <h2 className="mb-4 text-4xl tracking-tight font-extrabold">
+              Nossa Equipe
+            </h2>
+            <p className="lg:mb-16 sm:text-xl">
+              Conheça nossa equipe dedicada que trabalha incansavelmente para
+              trazer o melhor da cultura indígena até você.
+            </p>
           </div>
-        </section>
+          <div className="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
+            {teamMembers.map((member: TeamMember, index: number) => (
+              <div
+                key={index}
+                className="flex bg-gray-50 rounded-lg shadow-2xl dark:bg-custom-green dark:border-gray-700"
+              >
+                <div className="flex-none w-1/3">
+                  <a href="#">
+                    <img
+                      className="w-full h-full object-cover rounded-l-lg"
+                      src={member.imgSrc}
+                      alt={`${member.name} Avatar`}
+                    />
+                  </a>
+                </div>
+                <div className="flex-grow p-5">
+                  <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    <a href="#">{member.name}</a>
+                  </h3>
+                  <span className="text-gray-500 dark:text-white">
+                    {member.role}
+                  </span>
+                  <p className="mt-3 mb-4 font-light text-gray-500 dark:text-gray-200">
+                    {member.description}
+                  </p>
+                  <ul className="flex space-x-4 sm:mt-0">
+                    <li>
+                      <a
+                        href={member.linkedinUrl}
+                        target="_blank"
+                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
+                      >
+                        <LinkedinLogo className="w-5 h-5" />
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href={member.githubUrl}
+                        target="_blank"
+                        className="text-gray-200 hover:text-gray-900 dark:hover:text-white"
+                      >
+                        <GithubLogo className="w-5 h-5" />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       </div>
     );
 }

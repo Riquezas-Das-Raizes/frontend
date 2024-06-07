@@ -33,9 +33,9 @@ function Navbar() {
   return (
     <>
       <nav
-        className={`bg-custom-green text-white shadow-xl py-4 px-6 flex-col justify-center items-center sm:rounded-full ${
-          menuOpen ? "rounded-3xl" : "rounded-full"
-        } sm:mx-20 mt-4 sm:mt-20 relative mx-4`}
+        className={`bg-custom-green text-white shadow-xl py-4 px-6 flex-col justify-center items-center ${
+          menuOpen && "mt-0"
+        } mt-0 sm:mt-20 relative`}
       >
         <div className="flex justify-between w-full items-center sm:hidden">
           <Link to="/" className="flex justify-center items-center">

@@ -140,8 +140,7 @@ function FormProduct() {
   const carregandoCategoria = categoria.nome === "";
 
   return (
-    <div className="container flex flex-col mx-auto items-center bg-gradient-to-b from-custom-beige to-white rounded-lg
-    shadow-lg px-10 py-5">
+    <div className={`container flex flex-col mx-auto items-center bg-gradient-to-b from-custom-beige to-white rounded-lg shadow-lg px-10 py-5 ${id !== undefined ? 'w-1/2' : 'w-full'}`}>
       <h1 className="text-4xl text-center my-8">
         {id !== undefined ? "Editar Produto" : "Cadastrar Produto"}
       </h1>

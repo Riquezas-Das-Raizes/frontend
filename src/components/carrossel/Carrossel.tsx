@@ -29,7 +29,7 @@ import { Link } from "react-router-dom";
             >
 
                 <SwiperSlide>
-                    <Link to="/acessorios">
+                    <Link to="/categorias/14">
                 <img
                         className="swiper-slide-img" 
                         src="https://ik.imagekit.io/natashadev/Riqueza%20das%20Ra%C3%ADzes/Green%20Minimalist%20Nature%20Quotes%20Desktop%20Wallpaper%20(1).png?updatedAt=1717678702730" 

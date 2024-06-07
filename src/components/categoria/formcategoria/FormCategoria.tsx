@@ -93,19 +93,18 @@ function FormCategoria() {
     return (
         <div className="container flex flex-col items-center justify-center mx-auto
         bg-gradient-to-b from-custom-beige to-white rounded-lg
-        shadow-lg px-10 py-5">
-            <h1 className="text-4xl text-center my-8">
+        shadow-lg px-10 py-5 w-[90%] max-w-md">
+            <h1 className="text-2xl text-center my-4 whitespace-nowrap overflow-hidden text-ellipsis">
                 {id === undefined ? 'Cadastrar Categoria' : 'Editar Categoria'}
             </h1>
 
-            <form className="w-1/2 flex flex-col gap-4" onSubmit={generationNewCategory}>
+            <form className="w-full flex flex-col gap-4" onSubmit={generationNewCategory}>
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="nome">Nome da Categoria</label>
                     <input
                         type="text"
                         placeholder="Nome"
                         name='nome'
-                        className="border-2 border-slate-700 rounded p-2"
+                        className="border-2 border-slate-700 rounded p-2 w-full"
                         value={categoria.nome || ''}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => stateActually(e)}
                     />

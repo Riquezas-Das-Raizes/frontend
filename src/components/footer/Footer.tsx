@@ -33,7 +33,7 @@ function Footer() {
               </Link>
             </div>
             <div className="flex flex-col items-center md:items-start mb-4 md:mb-0">
-              <strong className="text-lg pb-2">Redes Sociais</strong>
+              <strong className="text-lg pb-8">Redes Sociais</strong>
               <div className="flex flex-row gap-5">
                 <LinkedinLogo size={24} />
                 <GithubLogo size={24} />
