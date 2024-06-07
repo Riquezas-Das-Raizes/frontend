@@ -3,16 +3,20 @@ import "./Sobrenos.css";
 import { teamMembers, TeamMember } from "../../util/teamMembers";
 
 function Sobrenos() {
-    return (
-      <div className="bg-custom-beige">
-        <div className="flex flex-col">
-          <div className="p-4 flex max-sm:flex-col">
-          <div className="quemsomosimg grid  m-5 w-2/5 rounded-lg shadow-xl"> 
-          <h2 className="p-5 text-center text-9xl font-extrabold text-white grid grid-cols-1 place-items-center ">Quem somos</h2>
+  return (
+    <div className="bg-custom-beige">
+      <div className="flex flex-col">
+        <div className="p-4 flex max-sm:flex-col">
+          <div className="quemsomosimg grid m-5 w-2/5 rounded-lg shadow-xl relative">
+            <div className="absolute inset-0 bg-black opacity-60 rounded-lg"></div>
+            <div className="flex justify-center absolute inset-0">
+              <h2 className="p-5 text-center text-9xl font-extrabold text-white grid grid-cols-1 place-items-center">
+                Quem somos
+              </h2>
+            </div>
           </div>
-          <div className=" flex-col self-center">
-           
-            <p className="flex justify-center item-center p-4 text-xl">
+          <div className="flex-col self-center">
+            <p className="flex justify-center items-center p-4 text-xl">
               Somos Riqueza das Raízes! Somos mais do que uma simples loja
               virtual; somos um portal para a celebração da cultura, da arte e
               da sustentabilidade. Nossa missão é trazer para você produtos
@@ -22,13 +26,11 @@ function Sobrenos() {
               ancestrais que estes artesãos preservam e compartilham com tanto
               orgulho.
             </p>
-            </div>
-         
-            </div>
-            <div className="p-4  flex bg-custom-green max-sm:flex-col max-sm:w-full">
-            <div className=" flex-col self-center">
-            
-            <p className="flex justify-center item-center p-4 text-xl">
+          </div>
+        </div>
+        <div className="p-4 flex bg-custom-green max-sm:flex-col max-sm:w-full">
+          <div className="flex-col self-center">
+            <p className="flex justify-center items-center p-4 text-xl">
               A Riqueza das Raízes tem como missão fomentar a economia
               sustentável e o comércio justo, oferecendo uma plataforma onde a
               autenticidade e a qualidade dos produtos artesanais indígenas
@@ -36,15 +38,19 @@ function Sobrenos() {
               loja é um testemunho do talento, da criatividade e da conexão
               profunda desses artesãos com a natureza.
             </p>
-            </div>
-            <div className="missaoimg m-5 w-2/5 grid rounded-lg shadow-xl">
-            <h2 className="p-5 text-center text-9xl font-extrabold text-white grid grid-cols-1 place-items-center">Nossa missão</h2>
+          </div>
+          <div className="missaoimg grid m-5 w-2/5 rounded-lg shadow-xl relative">
+            <div className="absolute inset-0 bg-black opacity-60 rounded-lg"></div>
+            <div className="flex justify-center absolute inset-0">
+              <h2 className="p-5 text-center text-9xl font-extrabold text-white grid grid-cols-1 place-items-center">
+                Nossa missão
+              </h2>
             </div>
           </div>
-        
         </div>
+      </div>
 
-        <section id="equipe">
+      <section id="equipe">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
           <div className="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
             <h2 className="mb-4 text-4xl tracking-tight font-extrabold">
@@ -62,22 +68,20 @@ function Sobrenos() {
                 className="flex bg-gray-50 rounded-lg shadow-2xl dark:bg-custom-green dark:border-gray-700"
               >
                 <div className="flex-none w-1/3">
-                  <a href="#">
-                    <img
-                      className="w-full h-full object-cover rounded-l-lg"
-                      src={member.imgSrc}
-                      alt={`${member.name} Avatar`}
-                    />
-                  </a>
+                  <img
+                    className="w-full h-full object-cover rounded-l-lg"
+                    src={member.imgSrc}
+                    alt={`${member.name} Avatar`}
+                  />
                 </div>
                 <div className="flex-grow p-5">
-                  <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-                    <a href="#">{member.name}</a>
+                  <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white ">
+                    {member.name}
                   </h3>
-                  <span className="text-gray-500 dark:text-white">
+                  <span className="text-gray-500 dark:text-white font-mono">
                     {member.role}
                   </span>
-                  <p className="mt-3 mb-4 font-light text-gray-500 dark:text-gray-200">
+                  <p className="mt-3 mb-4 font-light text-gray-500 dark:text-gray-200 ">
                     {member.description}
                   </p>
                   <ul className="flex space-x-4 sm:mt-0">
@@ -106,9 +110,8 @@ function Sobrenos() {
           </div>
         </div>
       </section>
-      </div>
-    );
+    </div>
+  );
 }
-
 
 export default Sobrenos;
