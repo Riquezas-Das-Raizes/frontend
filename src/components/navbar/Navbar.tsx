@@ -92,7 +92,7 @@ function Navbar() {
             </Link>
           </div>
           <div className="flex flex-grow justify-start space-x-4 pl-10">
-            <Link to="#" className="hover:underline">
+            <Link to="/cart" className="hover:underline">
               <span title="Carrinho">
                 <ShoppingBag size={25} />
               </span>
@@ -145,10 +145,10 @@ function Navbar() {
             <Link to="/artesaos" className="hover:underline">
               Artesãos
             </Link>
-            <Link to="#" className="hover:underline">
-              <span title="Carrinho">
-                <ShoppingBag size={25} />
-              </span>
+            <Link to="/cart" className="hover:underline" title="Carrinho">
+            <span title="Carrinho">
+            <ShoppingBag size={25} />
+            </span>
             </Link>
             {usuario.token ? (
               <>

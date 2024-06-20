@@ -16,11 +16,14 @@ import ListProducts from "./components/products/listproducts/ListProducts";
 import Artesaos from "./pages/artesaos/Artesaos";
 import { Toaster } from "react-hot-toast";
 import ProductCategory from "./components/products/productCategory/ProductCategory";
+import Cart from "./components/carrinho/cart/Cart";
+import { CartProvider } from "./contexts/CartContext";
 
 function App() {
   return (
     <>
       <AuthProvider>
+      <CartProvider>
         <Toaster/>
         <BrowserRouter>
           <Navbar />
@@ -45,9 +48,11 @@ function App() {
             <Route path="/editarproduto/:id" element={<FormProduct />} />
             <Route path="/perfil" element={<Perfil />} />
             <Route path="/artesaos" element={<Artesaos />} />
+            <Route path="/cart" element={<Cart />} />
           </Routes>
           <Footer />
         </BrowserRouter>
+        </CartProvider>
       </AuthProvider>
     </>
   );
