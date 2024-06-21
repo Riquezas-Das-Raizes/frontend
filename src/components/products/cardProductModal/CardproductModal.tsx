@@ -39,11 +39,11 @@ function CardProductModal({ product }: CardProductProps) {
         <div className="md:w-1/2 p-5 flex flex-col justify-center">
           <p className="text-black text-xl text-center mb-4 mt-4">{product.descricao}</p>
           <div className="border border-gray-800 my-4"></div>
-          <div className="flex justify-center items-center gap-x-5 mb-5">
+          <div className="flex justify-center items-center gap-x-5">
             <p className="text-gray-900 font-bold text-2xl">
               R$ {product.preco}
             </p>
-            <button className="bg-custom-green hover:bg-custom-emerald text-white font-bold py-2 px-4 rounded-xl"
+            <button className="bg-custom-green hover:bg-custom-emerald text-white font-bold py-2 px-4 rounded-xl w-2/6"
             onClick={() => adicionarProduto(product)}>
             Comprar
             </button>
@@ -51,7 +51,7 @@ function CardProductModal({ product }: CardProductProps) {
           
           <div className="border border-gray-300 my-4"></div>
           <div className="flex justify-center gap-x-5 mt-5">
-            <button className="transform transition-transform duration-300 hover:scale-110 hover:text-custom-red">
+            <button className=" flex justify-center transform transition-transform duration-300 hover:scale-110 hover:text-custom-red">
               <Link to="/artesaos">
                 <InstagramLogo size={36} />
               </Link>
