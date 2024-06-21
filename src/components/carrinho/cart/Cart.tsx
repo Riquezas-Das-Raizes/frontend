@@ -17,8 +17,6 @@ function Cart() {
     return total + preco;
   }, 0);
 
-  console.log(`Subtotal: ${subtotal}, Type: ${typeof subtotal}`);
-
   return (
     <div className="flex flex-col justify-center">
       <h1 className="text-4xl text-center my-4">Carrinho de Compras</h1>
