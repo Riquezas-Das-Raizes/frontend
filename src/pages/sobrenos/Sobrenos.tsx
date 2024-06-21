@@ -5,50 +5,51 @@ import { teamMembers, TeamMember } from "../../util/teamMembers";
 function Sobrenos() {
   return (
     <div className="bg-custom-beige">
-      <div className="flex flex-col">
-        <div className="p-4 flex max-sm:flex-col">
-          <div className="quemsomosimg grid m-5 w-2/5 rounded-lg shadow-xl relative">
-            <div className="absolute inset-0 bg-black opacity-60 rounded-lg"></div>
-            <div className="flex justify-center absolute inset-0">
-              <h2 className="p-5 text-center text-9xl font-extrabold text-white grid grid-cols-1 place-items-center">
-                Quem somos
-              </h2>
-            </div>
-          </div>
-          <div className="flex-col self-center">
-            <p className="flex justify-center items-center p-4 text-xl">
-              Somos Riqueza das Raízes! Somos mais do que uma simples loja
-              virtual; somos um portal para a celebração da cultura, da arte e
-              da sustentabilidade. Nossa missão é trazer para você produtos
-              únicos e autênticos, feitos à mão pelos povos originários do
-              Brasil, conhecidos por muitos como indígenas. Através da nossa
-              plataforma, buscamos valorizar a riqueza cultural e as tradições
-              ancestrais que estes artesãos preservam e compartilham com tanto
-              orgulho.
-            </p>
-          </div>
-        </div>
-        <div className="p-4 flex bg-custom-green max-sm:flex-col max-sm:w-full">
-          <div className="flex-col self-center">
-            <p className="flex justify-center items-center p-4 text-xl">
-              A Riqueza das Raízes tem como missão fomentar a economia
-              sustentável e o comércio justo, oferecendo uma plataforma onde a
-              autenticidade e a qualidade dos produtos artesanais indígenas
-              possam ser apreciadas e adquiridas. Cada item disponível em nossa
-              loja é um testemunho do talento, da criatividade e da conexão
-              profunda desses artesãos com a natureza.
-            </p>
-          </div>
-          <div className="missaoimg grid m-5 w-2/5 rounded-lg shadow-xl relative">
-            <div className="absolute inset-0 bg-black opacity-60 rounded-lg"></div>
-            <div className="flex justify-center absolute inset-0">
-              <h2 className="p-5 text-center text-9xl font-extrabold text-white grid grid-cols-1 place-items-center">
-                Nossa missão
-              </h2>
-            </div>
-          </div>
-        </div>
+      <div className="flex flex-col bg-background p-4">
+  <div className="flex flex-col sm:flex-row">
+    <div className="quemsomosimg flex flex-col justify-center items-center m-5 sm:w-3/5 w-11/12 rounded-lg shadow-xl relative">
+      <div className="absolute inset-0 bg-black opacity-60 rounded-lg"></div>
+      <div className="relative z-10">
+        <h2 className="p-5 text-center text-5xl sm:text-9xl font-extrabold text-white">
+          Quem somos
+        </h2>
       </div>
+    </div>
+    <div className="flex-col self-center sm:w-3/5 w-full">
+      <p className="flex justify-center items-center p-4 text-base sm:text-xl">
+        Somos Riqueza das Raízes! Somos mais do que uma simples loja virtual;
+        somos um portal para a celebração da cultura, da arte e da
+        sustentabilidade. Nossa missão é trazer para você produtos únicos e
+        autênticos, feitos à mão pelos povos originários do Brasil, conhecidos
+        por muitos como indígenas. Através da nossa plataforma, buscamos
+        valorizar a riqueza cultural e as tradições ancestrais que estes
+        artesãos preservam e compartilham com tanto orgulho.
+      </p>
+    </div>
+  </div>
+  <div className="flex flex-col sm:flex-row bg-custom-green">
+    <div className="flex-col self-center sm:w-3/5 w-full">
+      <p className="flex justify-center items-center p-4 text-base sm:text-xl">
+        A Riqueza das Raízes tem como missão fomentar a economia sustentável e o
+        comércio justo, oferecendo uma plataforma onde a autenticidade e a
+        qualidade dos produtos artesanais indígenas possam ser apreciadas e
+        adquiridas. Cada item disponível em nossa loja é um testemunho do
+        talento, da criatividade e da conexão profunda desses artesãos com a
+        natureza.
+      </p>
+    </div>
+    <div className="missaoimg flex flex-col justify-center items-center m-5 sm:w-3/5 w-11/12 rounded-lg shadow-xl relative">
+      <div className="absolute inset-0 bg-black opacity-60 rounded-lg"></div>
+      <div className="relative z-10">
+        <h2 className="p-5 text-center text-5xl sm:text-9xl font-extrabold text-white">
+          Nossa missão
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
       <section id="equipe">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
