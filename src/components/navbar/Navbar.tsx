@@ -1,10 +1,11 @@
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import Categoria from "../../models/Categoria";
 import { ShoppingBag, SignIn, SignOut, User, List, X } from "@phosphor-icons/react";
 import { buscarCat } from "../../services/Service";
 import ModalLogin from "../modal/modallogin/ModalLogin";
+import ModalRegister from "../modal/modalregister/ModalRegister";
 import { hotAlerta } from "../../util/hotAlerta";
 
 function Navbar() {
@@ -12,12 +13,8 @@ function Navbar() {
   const { usuario, handleLogout } = useContext(AuthContext);
   const [categorias, setCategorias] = useState<Categoria[]>([]);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  function logout() {
-    handleLogout();
-    hotAlerta("O usuário foi desconectado com sucesso!", 'sucesso');
-    navigate("/");
-  }
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
 
   useEffect(() => {
     async function listar() {
@@ -29,6 +26,29 @@ function Navbar() {
     }
     listar();
   }, []);
+
+  function logout() {
+    handleLogout();
+    hotAlerta("O usuário foi desconectado com sucesso!", 'sucesso');
+    navigate("/");
+  }
+
+  const openLoginModal = () => {
+    setIsLoginOpen(true);
+  };
+
+  const closeLoginModal = () => {
+    setIsLoginOpen(false);
+  };
+
+  const openRegisterModal = () => {
+    setIsRegisterOpen(true);
+    setIsLoginOpen(false);
+  };
+
+  const closeRegisterModal = () => {
+    setIsRegisterOpen(false);
+  };
 
   return (
     <>
@@ -116,7 +136,13 @@ function Navbar() {
                 </Link>
               </>
             ) : (
-              <ModalLogin triggerElement={<SignIn size={25} className="hover:underline cursor-pointer" />} />
+              <>
+                <button
+                  onClick={openLoginModal}
+                >
+                  <SignIn size={24} />
+                </button>
+              </>
             )}
           </div>
         </div>
@@ -169,11 +195,30 @@ function Navbar() {
                 </Link>
               </>
             ) : (
-              <ModalLogin triggerElement={<SignIn size={25} className="hover:underline cursor-pointer" />} />
+              <>
+                <button
+                  onClick={openLoginModal}
+                >
+                  <SignIn size={24} />
+                </button>
+              </>
             )}
           </div>
         </div>
       </nav>
+
+      <ModalLogin
+        triggerElement={<button className="hidden"></button>}
+        isOpen={isLoginOpen}
+        onClose={closeLoginModal}
+        onRegisterClick={openRegisterModal}
+      />
+      <ModalRegister
+        triggerElement={<button className="hidden"></button>}
+        isOpen={isRegisterOpen}
+        onClose={closeRegisterModal}
+        onLoginClick={openLoginModal}
+      />
     </>
   );
 }

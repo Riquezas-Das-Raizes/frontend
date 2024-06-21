@@ -24,22 +24,17 @@ function App() {
         <Toaster/>
         <BrowserRouter>
           <Navbar />
-          <Routes key={window.location.pathname}>
+          <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/sobrenos" element={<Sobrenos />} />
             <Route path="/login" element={<Login />} />
             <Route path="/cadastrar" element={<Cadastro />} />
             <Route path="/categorias" element={<ListaCategoria />} />
             <Route path="/categorias/:id" element={<ProductCategory />} />
-            <Route
-              path="/deletarcategoria/:id"
-              element={<DeletarCategoria />}
-            />
+            <Route path="/deletarcategoria/:id" element={<DeletarCategoria />}/>
             <Route path="/cadastrarcategoria" element={<FormCategoria />} />
             <Route path="/editarcategoria/:id" element={<FormCategoria />} />
-            {/* <Route path="/produtos" element={<ListProductsAdmin />} /> */}
             <Route path="/produtos" element={<ListProducts />} />
-            {/* <Route path="/produtos/:nome" element={<ListProducts />} /> */}
             <Route path="/deletarproduto/:id" element={<DeleteProduct />} />
             <Route path="/cadastrarproduto" element={<FormProduct />} />
             <Route path="/editarproduto/:id" element={<FormProduct />} />

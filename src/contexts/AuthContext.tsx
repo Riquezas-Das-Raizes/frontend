@@ -6,7 +6,7 @@ import { hotAlerta } from "../util/hotAlerta";
 interface AuthContextProps {
   usuario: UsuarioLogin;
   handleLogout(): void;
-  handleLogin(usuario: UsuarioLogin): Promise<void>;
+  handleLogin(usuario: UsuarioLogin, onClose: () => void): Promise<void>;
   isLoading: boolean;
 }
 
@@ -29,13 +29,14 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  async function handleLogin(usuarioLogin: UsuarioLogin) {
+  async function handleLogin(usuarioLogin: UsuarioLogin, onClose: () => void) {
     setIsLoading(true);
 
     try {
       await login(`/usuarios/logar`, usuarioLogin, setUsuario);
       hotAlerta("Usuário autenticado com sucesso!", 'sucesso');
       setIsLoading(false);
+      onClose();
     } catch (error) {
       hotAlerta("Dados do Usuário inconsistentes!", 'erro');
       setIsLoading(false);
