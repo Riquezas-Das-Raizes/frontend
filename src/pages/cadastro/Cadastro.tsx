@@ -133,7 +133,7 @@ function Cadastro({ onClose, onLoginClick }) {
         </div>
         <button
           type="submit"
-          className="rounded bg-custom-green hover:bg-custom-emerald text-white w-full py-2 mb-4"
+          className="btn rounded bg-custom-green hover:bg-custom-emerald text-white w-full py-2 mb-4"
         >
           {isLoading ? (
             <RotatingLines

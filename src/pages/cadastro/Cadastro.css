@@ -32,7 +32,7 @@ form {
   box-sizing: border-box; /* Garante que o padding seja incluído na largura */
 }
 
-input, button {
+input, .btn {
   width: 100%;
 }
 
