@@ -3,12 +3,17 @@ import "reactjs-popup/dist/index.css";
 import Product from "../../../models/Produto";
 import { InstagramLogo } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../../contexts/CartContext";
+import { useContext } from "react";
 
 interface CardProductProps {
   product: Product;
 }
 
 function CardProductModal({ product }: CardProductProps) {
+
+  const { adicionarProduto } = useContext(CartContext)
+  
   return (
     <Popup
       trigger={
@@ -30,19 +35,20 @@ function CardProductModal({ product }: CardProductProps) {
             className="w-full h-72 object-cover rounded-xl mb-4 shadow-2xl shadow-slate-500"
           />
         </div>
-        <div className="w-full md:w-1/2 p-5 flex flex-col justify-center">
-          <p className="text-black text-xl text-center mb-4 mt-4">
-            {product.descricao}
-          </p>
-          <div className="border border-gray-300 my-4"></div>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-x-5 mb-5">
-            <p className="text-gray-900 font-bold text-2xl mb-4 md:mb-0">
+
+        <div className="md:w-1/2 p-5 flex flex-col justify-center">
+          <p className="text-black text-xl text-center mb-4 mt-4">{product.descricao}</p>
+          <div className="border border-gray-800 my-4"></div>
+          <div className="flex justify-center items-center gap-x-5 mb-5">
+            <p className="text-gray-900 font-bold text-2xl">
               R$ {product.preco}
             </p>
-            <button className="bg-custom-green hover:bg-custom-emerald text-white font-bold py-2 px-4 rounded-xl">
-              <Link to="/artesaos">Comprar</Link>
+            <button className="bg-custom-green hover:bg-custom-emerald text-white font-bold py-2 px-4 rounded-xl"
+            onClick={() => adicionarProduto(product)}>
+            Comprar
             </button>
           </div>
+          
           <div className="border border-gray-300 my-4"></div>
           <div className="flex justify-center gap-x-5 mt-5">
             <button className="transform transition-transform duration-300 hover:scale-110 hover:text-custom-red">
