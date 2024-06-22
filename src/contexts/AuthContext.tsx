@@ -5,6 +5,7 @@ import { hotAlerta } from "../util/hotAlerta";
 
 interface AuthContextProps {
   usuario: UsuarioLogin;
+  setUsuario: (usuario: UsuarioLogin) => void;
   handleLogout(): void;
   handleLogin(usuario: UsuarioLogin, onClose: () => void): Promise<void>;
   isLoading: boolean;
@@ -57,7 +58,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   return (
     <AuthContext.Provider
-      value={{ usuario, handleLogin, handleLogout, isLoading }}
+      value={{ usuario, setUsuario, handleLogin, handleLogout, isLoading }}
     >
       {children}
     </AuthContext.Provider>
