@@ -1,3 +1,4 @@
+import React, { useEffect, useRef } from 'react';
 import Popup from "reactjs-popup";
 import 'reactjs-popup/dist/index.css';
 import './ModalLogin.css';
@@ -11,8 +12,30 @@ interface ModalLoginProps {
 }
 
 function ModalLogin({ triggerElement, isOpen, onClose, onRegisterClick }: ModalLoginProps) {
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (contentRef.current && !contentRef.current.contains(event.target as Node)) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isOpen, onClose]);
+
   const content = (close: () => void) => (
-    <Login onClose={close} onRegisterClick={onRegisterClick} />
+    <div ref={contentRef}>
+      <Login onClose={close} onRegisterClick={onRegisterClick} />
+    </div>
   );
 
   return (
