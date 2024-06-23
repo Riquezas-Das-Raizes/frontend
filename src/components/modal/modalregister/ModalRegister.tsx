@@ -24,10 +24,10 @@ function ModalRegister({ triggerElement, isOpen, onClose, onLoginClick }: ModalR
       contentStyle={{
         width: '90%',
         maxWidth: '800px',
-        maxHeight: '100vh', // Altura máxima definida
+        maxHeight: '100vh',
         padding: '20px',
         borderRadius: '10px',
-        overflow: 'hidden' // Esconder overflow
+        overflow: 'hidden'
       }}
     >
       {content(onClose)}

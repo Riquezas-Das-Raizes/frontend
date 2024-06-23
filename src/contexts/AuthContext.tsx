@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useState, useEffect } from "react";
 import UsuarioLogin from "../models/UsuarioLogin";
 import { login } from "../services/Service";
 import { hotAlerta } from "../util/hotAlerta";
@@ -9,6 +9,8 @@ interface AuthContextProps {
   handleLogout(): void;
   handleLogin(usuario: UsuarioLogin, onClose: () => void): Promise<void>;
   isLoading: boolean;
+  compras: any[];
+  setCompras: (compras: any[]) => void;
 }
 
 interface AuthProviderProps {
@@ -18,23 +20,39 @@ interface AuthProviderProps {
 export const AuthContext = createContext({} as AuthContextProps);
 
 export function AuthProvider({ children }: AuthProviderProps) {
-  const [usuario, setUsuario] = useState<UsuarioLogin>({
-    id: 0,
-    nome: "",
-    usuario: "",
-    senha: "",
-    foto: "",
-    token: "",
-    admin: false,
+  const [usuario, setUsuario] = useState<UsuarioLogin>(() => {
+    const savedUser = localStorage.getItem('usuario');
+    return savedUser ? JSON.parse(savedUser) : {
+      id: 0,
+      nome: "",
+      usuario: "",
+      senha: "",
+      foto: "",
+      token: "",
+      admin: false,
+    };
   });
 
   const [isLoading, setIsLoading] = useState(false);
+  const [compras, setCompras] = useState<any[]>(() => {
+    const savedCompras = localStorage.getItem('compras');
+    return savedCompras ? JSON.parse(savedCompras) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('usuario', JSON.stringify(usuario));
+  }, [usuario]);
+
+  useEffect(() => {
+    localStorage.setItem('compras', JSON.stringify(compras));
+  }, [compras]);
 
   async function handleLogin(usuarioLogin: UsuarioLogin, onClose: () => void) {
     setIsLoading(true);
 
     try {
       await login(`/usuarios/logar`, usuarioLogin, setUsuario);
+
       hotAlerta("Usuário autenticado com sucesso!", 'sucesso');
       setIsLoading(false);
       onClose();
@@ -54,12 +72,13 @@ export function AuthProvider({ children }: AuthProviderProps) {
       token: "",
       admin: false,
     });
+    setCompras([]);
+    localStorage.removeItem('usuario');
+    localStorage.removeItem('compras');
   }
 
   return (
-    <AuthContext.Provider
-      value={{ usuario, setUsuario, handleLogin, handleLogout, isLoading }}
-    >
+    <AuthContext.Provider value={{ usuario, setUsuario, handleLogin, handleLogout, isLoading, compras, setCompras }}>
       {children}
     </AuthContext.Provider>
   );

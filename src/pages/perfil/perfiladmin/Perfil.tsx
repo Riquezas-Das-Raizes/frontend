@@ -21,11 +21,11 @@ function Perfil() {
 
   return (
     <div className="container mx-auto mt-4 rounded-2xl overflow-hidden">
-      <div className=" bg-custom-green w-full h-60 object-cover border-b-8 border-white"></div>
+      <div className=" bg-custom-green w-full h-48 object-cover border-b-8 border-white"></div>
       <img
         src={usuario.foto}
         alt={`Foto de perfil de ${usuario.nome}`}
-        className="rounded-full w-56 mx-auto mt-[-8rem] border-8 border-white relative z-10 transition duration-300 ease-in-out hover:brightness-50"
+        className="rounded-full w-40 mx-auto mt-[-8rem] border-8 border-white relative z-10 transition duration-300 ease-in-out hover:brightness-50"
       />
       {usuario.admin ? (
         <>
@@ -43,7 +43,6 @@ function Perfil() {
             <div className="flex justify-around gap-4 mb-5">
               <div className="flex justify-around gap-4">
                 <ModalCategoria/>
-                {/* <Link to="/categorias" className='text-center rounded font-bold text-custom-emerald  border-custom-green hover:bg-custom-emerald hover:text-white border-solid  border-2 py-2  px-4'>Listar Categoria</Link> */}
                 <ModalListarCategoria/>
               </div>
             </div>
