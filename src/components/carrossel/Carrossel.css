@@ -1,42 +1,37 @@
-
-:root {
-    --swiper-theme-color: #ffffff;
-  }
-  
-
-  .swiper {
-    height: 70vh;
-    margin: 0;
-  }
-  
-  .swiper-slide-img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  @media screen and (max-width: 600px) {
-  .fundoMobile {
-    background-image: url("https://ik.imagekit.io/natashadev/Riqueza%20das%20Ra%C3%ADzes/Beige%20Green%20Aesthetic%20Decorative%20Background%20Instagram%20Story.png?updatedAt=1717680247272");
-    background-repeat: no-repeat;
-    width: 100%;
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center;
-  }
-
-    .fundoPc{
-        display: none;
-    }
+.swiper {
+  height: 70vh;
+  margin: 0;
 }
 
-  @media screen and (max-width: 600px) {
-    .fundoMobile{
-        display: none;
-    }
+.swiper-slide-img {
+  display: block;
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+}
 
-    .fundoMobile{
-        display: flex;
-    }
+@media screen and (max-width: 600px) {
+  .fundoMobile {
+      background-image: url("https://ik.imagekit.io/natashadev/Riqueza%20das%20Ra%C3%ADzes/Beige%20Green%20Aesthetic%20Decorative%20Background%20Instagram%20Story.png?updatedAt=1717680247272");
+      background-repeat: no-repeat;
+      width: 100%;
+      min-height: 100vh;
+      background-size: cover;
+      background-position: center;
+      display: flex;
+  }
+
+  .fundoPc {
+      display: none;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .fundoMobile {
+      display: none;
+  }
+
+  .fundoPc {
+      display: block;
+  }
 }

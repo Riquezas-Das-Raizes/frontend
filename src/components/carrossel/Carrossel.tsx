@@ -23,16 +23,27 @@ import { Link } from "react-router-dom";
                     delay: 8000,
                     disableOnInteraction: false,
                 }}
-                navigation={true}
+                // navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
             >
+
+                {/* <SwiperSlide>
+                    <Link to="/categorias/14">
+                <img
+                        className="swiper-slide-img" 
+                        src="https://ik.imagekit.io/natashadev/Riqueza%20das%20Ra%C3%ADzes/Green%20Minimalist%20Nature%20Quotes%20Desktop%20Wallpaper%20(1).png?updatedAt=1717678702730" 
+                        alt="Carrossel - Slide 01 Conectando Tradição e  Modernidade em Cada Compra
+                        " 
+                    />
+                    </Link>
+                </SwiperSlide> */}
 
                 <SwiperSlide>
                     <Link to="/categorias/14">
                 <img
                         className="swiper-slide-img" 
-                        src="https://ik.imagekit.io/natashadev/Riqueza%20das%20Ra%C3%ADzes/Green%20Minimalist%20Nature%20Quotes%20Desktop%20Wallpaper%20(1).png?updatedAt=1717678702730" 
+                        src="https://ik.imagekit.io/z5xvlplbb/New%20Folder/Conectando2....png" 
                         alt="Carrossel - Slide 01 Conectando Tradição e  Modernidade em Cada Compra
                         " 
                     />
