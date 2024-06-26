@@ -43,14 +43,13 @@ import { Link } from "react-router-dom";
                     <Link to="/categorias/14">
                 <img
                         className="swiper-slide-img" 
-                        src="https://ik.imagekit.io/z5xvlplbb/New%20Folder/Conectando2....png" 
-                        alt="Carrossel - Slide 01 Conectando Tradição e  Modernidade em Cada Compra
-                        " 
+                        src="https://ik.imagekit.io/z5xvlplbb/New%20Folder/Conectando...png" 
+                        alt="Carrossel - Slide 01 Conectando Tradição e  Modernidade em Cada Compra" 
                     />
                     </Link>
                 </SwiperSlide>
 
-                <SwiperSlide>
+                {/* <SwiperSlide>
                     <Link to="/artesaos">
                     <img
                         className="swiper-slide-img" 
@@ -58,14 +57,21 @@ import { Link } from "react-router-dom";
                         alt="Carrossel - Slide 02 Todos os produtos apresentados nesse trabalho são de artesãos reais e você pode conferir o trabalho deles na nossa página artesãos!" 
                     />
                     </Link>
+                </SwiperSlide> */}
+
+                <SwiperSlide>
+                    <Link to="/artesaos">
+                    <img
+                        className="swiper-slide-img" 
+                        src="https://ik.imagekit.io/z5xvlplbb/New%20Folder/sld2.png" 
+                        alt="Carrossel - Slide 02 Confira quem são nossos artesões responsáveis por cada peça." 
+                    />
+                    </Link>
                 </SwiperSlide>
 
             </Swiper>
             </div>
-            <div className="fundoMobile">
-
-            </div>
-             
+            <div className="fundoMobile"></div>  
         </>
     )
 
