@@ -63,7 +63,7 @@ import { Link } from "react-router-dom";
                     <Link to="/artesaos">
                     <img
                         className="swiper-slide-img" 
-                        src="https://ik.imagekit.io/z5xvlplbb/New%20Folder/sld2.png" 
+                        src="https://ik.imagekit.io/z5xvlplbb/New%20Folder/slide2.png?updatedAt=1719506221410" 
                         alt="Carrossel - Slide 02 Confira quem são nossos artesões responsáveis por cada peça." 
                     />
                     </Link>
