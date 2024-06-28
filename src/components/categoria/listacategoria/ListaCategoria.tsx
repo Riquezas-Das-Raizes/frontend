@@ -41,7 +41,7 @@ function ListaCategoria() {
 
   return (
     <>
-    <div className="flex justify-center items-center h-64">
+    <div className="flex justify-center items-center">
     {categorias.length === 0 && (
                    <ThreeDots
                     visible={true}
@@ -56,8 +56,8 @@ function ListaCategoria() {
             )}
             </div>
       <div className="flex m-2 justify-center align-center p-16 
-      bg-gradient-to-b from-custom-beige to-white rounded-lg
-        shadow-lg px-10 py-10">
+      bg-white rounded-lg
+         px-10 py-10">
         {categorias.map((categoria) => (
           <CardCategoria key={categoria.id} categoria={categoria} />
         ))}
