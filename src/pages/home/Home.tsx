@@ -6,7 +6,7 @@ function Home() {
         <>
             <Carrossel />
             <div className="bg-custom-beige size-full p-5 mt-10 text-xl font-bold">
-                <h2 className="ml-16"> Lançamentos</h2>
+                <h2 className="ml-9 sm:ml-12 lg:ml-12"> Lançamentos</h2>
                 <HomeProducts />
             </div>
         </>

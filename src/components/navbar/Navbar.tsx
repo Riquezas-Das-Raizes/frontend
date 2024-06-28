@@ -159,7 +159,7 @@ function Navbar() {
             {categorias.map((categoria) => (
               <Link
                 key={categoria.id}
-                to={`/categoria/${categoria.id}`}
+                to={`/categorias/${categoria.id}`}
                 className="hover:underline"
               >
                 {categoria.nome}
