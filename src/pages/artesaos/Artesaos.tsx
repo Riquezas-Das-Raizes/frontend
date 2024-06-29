@@ -1,4 +1,4 @@
-import { Browser } from "@phosphor-icons/react";
+import { Browser, InstagramLogo } from "@phosphor-icons/react";
 
 function Artesaos() {
   return (
@@ -28,20 +28,32 @@ function Artesaos() {
             <p className="mb-0">Desde 2013, uma família formada por uma nômade e um indígena Pataxó, baseada em São Paulo - SP, trabalha 
               com miçangas de vidro jablonex, criando peças inspiradas nos povos originários da terra, feitas à mão 
               com carinho e amor, aceitando encomendas mediante contato direto.</p>
-              <div className="justify-center flex gap-2 pt-3 text-custom-black hover:underline"><Browser size={25} /> <a href="https://www.elo7.com.br/nomadeepataxo" target="_blank" rel="noopener noreferrer">Conheça mais desse artesão</a></div>
+              <div className="justify-center flex gap-2 p-3 text-white ">Conheça mais desse artesão!</div>
+              <div className="flex justify-center">
+              <div className="p-3 text-custom-black "> <a href="https://www.elo7.com.br/nomadeepataxo" target="_blank" rel="noopener noreferrer" className=" hover:text-gray-200"> <Browser size={35} /> </a></div>
+              <div className="x gap-2 p-3 text-custom-black"> <a href="https://www.instagram.com/nomade_e_pataxo/" target="_blank" rel="noopener noreferrer" className=" hover:text-gray-200"> <InstagramLogo size={35} /> </a></div>
+              </div>               
           </div>
           <div className="bg-custom-green rounded-lg shadow-md p-6 my-6 text-center w-full md:w-1/2 lg:w-1/4">
             <img src="https://ik.imagekit.io/natashadev/Riqueza%20das%20Ra%C3%ADzes/819B56.webp?updatedAt=1719080053188" alt="" className="rounded-full mx-auto h-48 w-48" />
             <h3 className="text-xl font-bold my-2">HULUKI ARTE INDIGENA</h3>
             <p className="mb-0">Desde 2018, a Huluki, com sede em São Paulo - SP, promove a venda de arte indígena autêntica, gerando renda 
               para comunidades artesãs e oferecendo aos clientes uma experiência enriquecedora e satisfatória.</p>
-              <div className="justify-center flex gap-2 p-3 text-custom-black hover:underline"><Browser size={25} /> <a href="https://www.elo7.com.br/hulukiarteindigena" target="_blank" rel="noopener noreferrer">Conheça mais desse artesão</a></div>              
+              <div className="justify-center flex gap-2 p-3 text-white">Conheça mais desse artesão!</div>
+              <div className="flex justify-center">
+              <div className="p-3 text-custom-black "> <a href="https://www.elo7.com.br/hulukiarteindigena" target="_blank" rel="noopener noreferrer" className=" hover:text-gray-200"> <Browser size={35} /> </a></div>
+              <div className="x gap-2 p-3 text-custom-black"> <a href="https://www.instagram.com/huluki_arteindigena?igsh=NWt2MXcwNDUyY3Nw " target="_blank" rel="noopener noreferrer" className=" hover:text-gray-200"> <InstagramLogo size={35} /> </a></div>
+              </div>                
           </div>
           <div className="bg-custom-green rounded-lg shadow-md p-6 my-6 text-center w-full md:w-1/2 lg:w-1/4">
             <img src="https://ik.imagekit.io/natashadev/Riqueza%20das%20Ra%C3%ADzes/DE3DDE.jpg?updatedAt=1719080075655" alt="" className="rounded-full mx-auto h-48 w-48" />
             <h3 className="text-xl font-bold my-2">AWATXUHU ARTESANATO </h3>
             <p className="mb-0">Aqui você vai encontrar peças produzidas manualmente pelas artesãs da Comunidade Indígena Puyanawa.</p>
-              <div className="justify-center flex gap-2 pt-3 text-custom-black hover:underline"><Browser size={25} /> <a href="https://www.elo7.com.br/AwatxuhuArtesanatosPuyanawa" target="_blank" rel="noopener noreferrer">Conheça mais desse artesão</a></div>
+            <div className="justify-center flex gap-2 p-3 text-white">Conheça mais desse artesão!</div>
+              <div className="flex justify-center">
+              <div className="p-3 text-custom-black "> <a href="https://www.elo7.com.br/AwatxuhuArtesanatosPuyanawa" target="_blank" rel="noopener noreferrer" className=" hover:text-gray-200"> <Browser size={35} /> </a></div>
+              <div className="x gap-2 p-3 text-custom-black"> <a href="https://www.instagram.com/awatxuhu_artesanatos/ " target="_blank" rel="noopener noreferrer" className=" hover:text-gray-200"> <InstagramLogo size={35} /> </a></div>
+              </div>               
           </div>
         </div>
       </div>

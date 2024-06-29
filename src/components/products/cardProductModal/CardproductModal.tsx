@@ -53,7 +53,7 @@ function CardProductModal({ product }: CardProductProps) {
           <div className="flex justify-center gap-x-5 mt-5">
             <button className=" flex justify-center transform transition-transform duration-300 hover:scale-110 hover:text-custom-red">
               <Link to="/artesaos">
-                <InstagramLogo size={36} />
+              Conheça o artesão responsável por essa peça! 
               </Link>
             </button>
           </div>
