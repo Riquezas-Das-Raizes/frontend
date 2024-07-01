@@ -7,6 +7,7 @@ import FormProduct from "../../../components/products/formproducts/FormProducts"
 import FormCategoria from "../../../components/categoria/formcategoria/FormCadastroCategoria";
 import { Link } from "react-router-dom";
 import ListaCategoria from "../../../components/categoria/listacategoria/ListaCategoria";
+import ListProducts from "../../../components/products/listproducts/ListProducts";
 
 export default function PerfilAdmin() {
   const { usuario, setUsuario} = useContext(AuthContext);
@@ -199,11 +200,11 @@ export default function PerfilAdmin() {
                 
               {selectedSection === 'listarProduto' && (
             <div className="bg-white p-6 rounded-md shadow-md overflow-auto h-full">
-              <h2 className="text-2xl font-bold mb-4">Listar Produto</h2>
+              <h2 className="text-2xl font-bold mb-4">Listar Produtos</h2>
               {
                 <div className="py-6">
                   
-                <Link to="/produtos" className='text-center rounded font-bold text-custom-emerald  border-custom-green hover:bg-custom-emerald hover:text-white border-solid  border-2 py-2 px-4'>Clique aqui para acessar todos os produtos</Link>
+              <ListProducts/>
                 </div>
               }
               </div>
