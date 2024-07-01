@@ -1,7 +1,7 @@
 import Popup from "reactjs-popup";
 import 'reactjs-popup/dist/index.css';
 import './ModalCategoria.css' 
-import FormCategoria from "../formcategoria/FormCategoria";
+import FormCategoria from "../formcategoria/FormCadastroCategoria";
 
 
 function ModalCategoria() {

@@ -6,7 +6,7 @@ import Home from "./pages/home/Home";
 import Sobrenos from "./pages/sobrenos/Sobrenos";
 import Perfil from "./pages/perfil/perfiladmin/Perfil";
 import ListaCategoria from "./components/categoria/listacategoria/ListaCategoria";
-import FormCategoria from "./components/categoria/formcategoria/FormCategoria";
+import FormCategoria from "./components/categoria/formcategoria/FormCadastroCategoria";
 import DeletarCategoria from "./components/categoria/deletarcategoria/DeletarCategoria";
 import DeleteProduct from "./components/products/deleteproducts/DelProducts";
 import FormProduct from "./components/products/formproducts/FormProducts";

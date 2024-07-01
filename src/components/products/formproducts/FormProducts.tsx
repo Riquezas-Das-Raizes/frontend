@@ -140,13 +140,13 @@ function FormProduct() {
   const carregandoCategoria = categoria.nome === "";
 
   return (
-    <div className={`container flex flex-col mx-auto items-center bg-gradient-to-b from-custom-beige to-white rounded-lg shadow-lg px-10 py-5 ${id !== undefined ? 'w-1/2' : 'w-full'}`}>
-      <h1 className="text-4xl text-center my-8">
-        {id !== undefined ? "Editar Produto" : "Cadastrar Produto"}
+    <div className={`container flex flex-col mx-auto items-center bg-white rounded-lg shadow-lg px-10 py-5 ${id !== undefined ? 'w-1/2' : 'w-full'}`}>
+  <h1 className={`text-4xl text-center ${id !== undefined ? 'my-0' : ''}`}>
+  {id !== undefined ? "Editar Produto" : ""}
       </h1>
 
       <form className="flex flex-col gap-4 w-full" onSubmit={gerarNovaProduct}>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 ">
           <label htmlFor="nome">Nome do Produto</label>
           <input
             type="text"
@@ -220,7 +220,7 @@ function FormProduct() {
         </div>
         <button
           type="submit"
-          className="rounded disabled:bg-slate-200 bg-indigo-400 hover:bg-indigo-800
+          className="rounded disabled:bg-slate-200 bg-custom-green
                                text-white font-bold w-1/2 mx-auto py-2 flex justify-center"
           disabled={carregandoCategoria}
         >
