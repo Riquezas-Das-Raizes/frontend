@@ -3,12 +3,10 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import { Bag, Info, Rows } from "@phosphor-icons/react";
 import { hotAlerta } from "../../../util/hotAlerta";
 import { atualizar } from "../../../services/Service";
-import ModalProduct from "../../../components/products/modalproducts/ModalProducts";
 import FormProduct from "../../../components/products/formproducts/FormProducts";
-import FormCategoria from "../../../components/categoria/formcategoria/FormCategoria";
+import FormCategoria from "../../../components/categoria/formcategoria/FormCadastroCategoria";
 import { Link } from "react-router-dom";
 import ListaCategoria from "../../../components/categoria/listacategoria/ListaCategoria";
-import ListProducts from "../../../components/products/listproducts/ListProducts";
 
 export default function PerfilAdmin() {
   const { usuario, setUsuario} = useContext(AuthContext);
@@ -212,7 +210,7 @@ export default function PerfilAdmin() {
               )}
 
             {selectedSection === 'cadastrarCategoria' && (
-            <div className="bg-white p-6 rounded-md shadow-md overflow-auto h-full">
+            <div className="bg-white p-6 rounded-md shadow-md overflow-auto">
               <h2 className="text-2xl font-bold mb-4">Cadastrar Categoria</h2>
               {
                 <FormCategoria/>

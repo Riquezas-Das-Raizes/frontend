@@ -6,7 +6,7 @@ import Categoria from "../../../models/Categoria";
 import { atualizar, buscar, cadastrarCategoria } from "../../../services/Service";
 import { hotAlerta } from "../../../util/hotAlerta";
 
-function FormCategoria() {
+function FormCadastroCategoria() {
 
     const navigate = useNavigate();
 
@@ -53,10 +53,6 @@ function FormCategoria() {
         });
     }
 
-    function retornar() {
-        navigate('/categorias');
-    }
-
     async function generationNewCategory(event: React.ChangeEvent<HTMLFormElement>) {
         event.preventDefault();
         setLoading(true);
@@ -77,6 +73,8 @@ function FormCategoria() {
                 });
                 hotAlerta('Categoria cadastrada com sucesso!', 'sucesso');
             }
+
+            setCategoria({} as Categoria);
         } catch (error: any) {
             if (error.toString().includes('401')) {
                 hotAlerta('O token expirou!', 'info');
@@ -87,35 +85,25 @@ function FormCategoria() {
         }
 
         setLoading(false);
-        retornar();
     }
 
     return (
-        <div className="container flex flex-col items-center justify-center mx-auto
-        bg-white rounded-lg shadow-lg
-         px-10 py-5  ">
-            <h1 className={`text-2xl text-center whitespace-nowrap overflow-hidden text-ellipsis ${id === undefined ? '' : 'my-0'}`}>
-                {id === undefined ? '' : 'Editar Categoria'}
-            </h1>
-
-            <form className="w-full flex flex-col gap-4" onSubmit={generationNewCategory}>
-                <div className="flex flex-col gap-2">
-                <label htmlFor="nome">Nome da Categoria</label>
-                    <input
-                        type="text"
-                        placeholder="Nome"
-                        name='nome'
-                        className="border-2 border-slate-700 rounded p-2"
-                        value={categoria.nome || ''}
-                        onChange={(e: ChangeEvent<HTMLInputElement>) => stateActually(e)}
-                    />
-                </div>
-                <button className="rounded text-slate-100 bg-custom-green hover:bg-custom-emerald w-1/2 py-2 mx-auto flex justify-center" type="submit">
+        <div className="flex flex-col items-center justify-center">
+            <form className="flex flex-col gap-4 p-0 items-end" onSubmit={generationNewCategory}>
+                <input
+                    type="text"
+                    placeholder="Nome da Categoria"
+                    name='nome'
+                    className="border-2 border-slate-700 rounded p-2"
+                    value={categoria.nome || ''}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) => stateActually(e)}
+                />
+                <button className="rounded text-slate-100 bg-custom-green hover:bg-custom-emerald py-2 px-5 flex justify-end w-30" type="submit">
                     {
                         isLoading ? (
                             <RotatingLines strokeColor='white' strokeWidth='5' animationDuration='0.75' width='24' visible={true} />
                         ) : (
-                            <span>{id === undefined ? 'Cadastrar' : 'Atualizar'}</span>
+                            <span>Cadastrar</span>
                         )
                     }
                 </button>
@@ -124,4 +112,4 @@ function FormCategoria() {
     );
 }
 
-export default FormCategoria;
+export default FormCadastroCategoria;
