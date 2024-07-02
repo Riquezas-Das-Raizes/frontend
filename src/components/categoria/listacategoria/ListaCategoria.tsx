@@ -13,7 +13,7 @@ function ListaCategoria() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const [editModalIsOpen, setEditModalIsOpen] = useState<boolean>(false); 
-  const [categoriaId, setCategoriaId] = useState<string>("");
+  const [categoriaId, setCategoriaId] = useState<number | null>(null); // Alterado para número
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
   let navigate = useNavigate();
@@ -44,17 +44,17 @@ function ListaCategoria() {
     listar();
   }, []);
 
-  function handleDeleteClick(id: string) {
+  function handleDeleteClick(id: number) { // Alterado para número
     setCategoriaId(id);
     setModalIsOpen(true);
   }
 
-  function handleEditClick(id: string) {
+  function handleEditClick(id: number) { // Alterado para número
     setCategoriaId(id);
     setEditModalIsOpen(true);
   }
 
-  function handleDeleteSuccess(id: string) {
+  function handleDeleteSuccess(id: number) { // Alterado para número
     setCategorias(prevCategorias => prevCategorias.filter(categoria => categoria.id !== id));
     setModalIsOpen(false);
   }
@@ -95,7 +95,7 @@ function ListaCategoria() {
           isOpen={modalIsOpen}
           onClose={() => setModalIsOpen(false)}
           categoriaId={categoriaId}
-          onDeleteSuccess={() => handleDeleteSuccess(categoriaId)}
+          onDeleteSuccess={() => handleDeleteSuccess(categoriaId!)} // Usar ! para garantir que não é null
           triggerElement={<button></button>}
         />
       )}

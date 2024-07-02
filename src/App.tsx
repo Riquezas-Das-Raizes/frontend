@@ -7,7 +7,6 @@ import Sobrenos from "./pages/sobrenos/Sobrenos";
 import Perfil from "./pages/perfil/perfiladmin/Perfil";
 import ListaCategoria from "./components/categoria/listacategoria/ListaCategoria";
 import FormCategoria from "./components/categoria/formcategoria/FormCadastroCategoria";
-import DeletarCategoria from "./components/categoria/deletarcategoria/DeletarCategoria";
 import DeleteProduct from "./components/products/deleteproducts/DelProducts";
 import FormProduct from "./components/products/formproducts/FormProducts";
 import ListProducts from "./components/products/listproducts/ListProducts";
@@ -30,7 +29,6 @@ function App() {
             <Route path="/sobrenos" element={<Sobrenos />} />
             <Route path="/categorias" element={<ListaCategoria />} />
             <Route path="/categorias/:id" element={<ProductCategory />} />
-            <Route path="/deletarcategoria/:id" element={<DeletarCategoria />}/>
             <Route path="/cadastrarcategoria" element={<FormCategoria />} />
             <Route path="/editarcategoria/:id" element={<FormCategoria />} />
             <Route path="/produtos" element={<ListProducts />} />
