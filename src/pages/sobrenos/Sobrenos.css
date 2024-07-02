@@ -1,24 +1,21 @@
-.background{
+.background {
     background-color: #e9eae2;
 }
 
-.quemsomosimg{
+.quemsomosimg {
     background-image: url("https://ik.imagekit.io/natashadev/Riqueza%20das%20Ra%C3%ADzes/kd0xRVO.jpeg?updatedAt=1717686923183");
     background-repeat: no-repeat;
-    /* width: auto;
-    height: auto; */
-    min-height: 75vh;
     background-size: cover;
-    min-width:100vh;
+    background-position: center;
+    min-height: 75vh;
 }
-.missaoimg{
+
+.missaoimg {
     background-image: url("https://ik.imagekit.io/natashadev/Riqueza%20das%20Ra%C3%ADzes/istockphoto-1256772459-1024x1024.jpg?updatedAt=1717686922204");
     background-repeat: no-repeat;
-    /* width: auto;
-    height: auto; */
-    min-height: 75vh;
     background-size: cover;
-    min-width:100vh;
+    background-position: center;
+    min-height: 75vh;
 }
 
 .card-image {
@@ -29,6 +26,12 @@
 
 .flex-grow {
     flex-grow: 1;
-    min-width: 0; /* Adiciona esta linha */
+    min-width: 0;
 }
-  
+
+@media (max-width: 640px) {
+    .quemsomosimg, .missaoimg {
+        min-height: 26vh;
+        background-size: contain;
+    }
+}

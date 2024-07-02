@@ -13,6 +13,10 @@ export default {
         'custom-black': '#2E1F27',
         'custom-red': '#A72608'
       },
+
+      minWidth: {
+        'screen-vh': '100vh',
+      },
     },
   },
   plugins: [],
