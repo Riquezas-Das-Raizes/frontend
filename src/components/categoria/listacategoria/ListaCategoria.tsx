@@ -13,7 +13,7 @@ function ListaCategoria() {
   const [categorias, setCategorias] = useState<Categoria[]>([]);
   const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
   const [editModalIsOpen, setEditModalIsOpen] = useState<boolean>(false); 
-  const [categoriaId, setCategoriaId] = useState<number | null>(null); // Alterado para número
+  const [categoriaId, setCategoriaId] = useState<string>("");
   const { usuario, handleLogout } = useContext(AuthContext);
   const token = usuario.token;
   let navigate = useNavigate();
@@ -44,18 +44,18 @@ function ListaCategoria() {
     listar();
   }, []);
 
-  function handleDeleteClick(id: number) { // Alterado para número
+  function handleDeleteClick(id: string) {
     setCategoriaId(id);
     setModalIsOpen(true);
   }
 
-  function handleEditClick(id: number) { // Alterado para número
+  function handleEditClick(id: string) {
     setCategoriaId(id);
     setEditModalIsOpen(true);
   }
 
-  function handleDeleteSuccess(id: number) { // Alterado para número
-    setCategorias(prevCategorias => prevCategorias.filter(categoria => categoria.id !== id));
+  function handleDeleteSuccess(id: string) {
+    setCategorias(prevCategorias => prevCategorias.filter(categoria => categoria.id.toString() !== id));
     setModalIsOpen(false);
   }
 
@@ -85,8 +85,8 @@ function ListaCategoria() {
           <CardCategoria
             key={categoria.id}
             categoria={categoria}
-            onDeleteClick={() => handleDeleteClick(categoria.id)}
-            onEditClick={() => handleEditClick(categoria.id)}
+            onDeleteClick={() => handleDeleteClick(categoria.id.toString())}
+            onEditClick={() => handleEditClick(categoria.id.toString())}
           />
         ))}
       </div>
@@ -95,7 +95,7 @@ function ListaCategoria() {
           isOpen={modalIsOpen}
           onClose={() => setModalIsOpen(false)}
           categoriaId={categoriaId}
-          onDeleteSuccess={() => handleDeleteSuccess(categoriaId!)} // Usar ! para garantir que não é null
+          onDeleteSuccess={() => handleDeleteSuccess(categoriaId)}
           triggerElement={<button></button>}
         />
       )}
